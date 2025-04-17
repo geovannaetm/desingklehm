@@ -1,0 +1,290 @@
+:root{
+
+    --rosa : #B18F8F;
+    --rosa2 : #E1C7C7;
+    --amarelo : #C08A01;
+    --cinza : #847F7F;
+    --preto : #000000;
+    
+    /*Tipografia*/
+    
+    --ff-gidugu: "Gidugu", sans-serif;
+    --ff-epilogue: "Epilogue", sans-serif;
+    --ff-gideon-roman: "Gideon Roman", serif;
+    --ff-inter: "Inter", sans-serif;
+    --ff-Euphoria_Script: "Euphoria Script", cursive;
+    --ff-bitter: "Bitter", serif;
+    --ff-Josefin_Sans: "Josefin Sans", sans-serif;
+    
+    
+        --fs-40: 4rem;
+        --fs-30: 3rem;
+        --fs-24: 2.4rem;
+        --fs-18: 1.8rem;
+        --fs-14: 1.4rem;
+        --fs-12: 1.3rem;
+    
+        --fw-300: 300;
+        --fw-500: 500;
+        --fw-600: 600;
+        --fw-700: 700;
+    
+    
+    }
+    
+    a {
+      text-decoration: none;  
+      color: inherit;        
+    }
+    
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    
+      
+      .container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+    
+      
+      .close-btn {
+        position: absolute;       
+        top: 55px;                 
+        right: 35px;     
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: #000;
+        align-self: flex-end;
+        cursor: pointer;
+        margin-left: auto;
+        transition: all ease 0.1s;
+        
+       
+      }
+    
+      .close-btn:active {
+      transform: translateY(5px);
+      box-shadow: 0px 0px 0px 0px #a29bfe;
+    }
+    
+      
+      
+      h1 {
+        font-size: 3rem;
+        color: white;
+        z-index: 1;
+      }
+      
+      .cart {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 450px;
+        height: 100%;
+        background-color: #F3F1F1;
+        z-index: 10;
+        text-align: center;
+        box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px 0px 0px 20px;
+        opacity: 0;  
+        position: absolute; 
+        right: -300px; 
+        animation: slide-in 1s forwards; 
+        justify-content: center;      
+        align-items: center; 
+      }
+    
+    
+      @keyframes slide-in {
+        0% {
+          right: -300px; 
+          opacity: 0; 
+        }
+        100% {
+          right: 0; 
+          opacity: 1; 
+        }
+      }
+    
+    
+    
+      h2 {
+        margin-bottom: 40px;
+        color: var(--rosa);
+        font-family: var(--ff-Josefin_Sans);
+        font-size: var(--fs-24);
+    }
+    
+    span{
+        font-family: var(--ff-inter);
+    }
+    
+    p{
+        font-family: var(--ff-inter);
+       
+    }
+    
+    .btn-social {
+        width: 100%;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        background-color: transparent;
+        cursor: pointer;
+        padding: 10px;
+        border: 2px solid #404040; 
+        align-items: center;
+        justify-content: center;
+       
+    }
+    
+    
+    .grupo-btnsocial {
+        padding-bottom: 20px;
+        width: 80%;
+        display: flex;
+        
+    }
+    
+    
+    
+    .grupo {
+        margin-bottom: 15px;
+        text-align: center;
+        
+        
+        
+    }
+    
+    .grupo span {
+        margin-top: 10px;
+        display: flex;
+       
+    }
+    
+    
+    
+    .cadastro{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        
+    }
+    
+    
+    .input-field {
+        width: 100%;
+        border: none;
+        background-color: transparent;
+    }
+    
+    .input-field:focus {
+        outline: none;
+    }
+        
+    
+     .input-register{
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: 2px solid #404040; 
+        padding: 8px 16px 8px 8px;
+        border-radius: 10px;
+        gap: 8px;
+        width: 310px;
+        height: 35px;
+        transition: all 0.3s ease;
+       
+        
+    }
+    
+    
+    
+    
+    .input-register:is(:hover, :focus) {
+        cursor: text; 
+        border: 2px solid var(--rosa);
+        
+    }
+    
+    
+    .enviar-btn{
+      background-color: var(--rosa); 
+      color: white; 
+      padding: 10px 20px;
+      border: none; 
+      border-radius: 5px; 
+      font-size: 16px; 
+      cursor: pointer; 
+      margin-bottom: 30px;
+      transition: background-color 0.3s ease;
+    }
+      
+    
+    
+    .enviar-btn:hover {
+      background-color: var(--rosa2);
+    }
+    
+    
+    .enviar-btn:active {
+      background-color:rgb(160, 129, 129);
+     
+    }
+    
+    
+    
+    .esqueci-senha {
+        padding-bottom: 25px;
+        color: var(--amarelo);
+      
+    }
+    
+    .esqueci-senha{
+        color: var(--amarelo);
+        transition: .25s ease;
+    }
+    
+    .esqueci-senha:is(:hover, :focus) {
+        color: var(--rosa);
+        text-shadow: -5px 0px 15px rgba(0, 0, 0, 0.1) ;
+     }
+    
+    .cadastrar {
+        margin-top: 20px;
+    }
+    
+    .cadastre-se{
+        color: var(--amarelo);
+        transition: .25s ease;
+    }
+    
+    .cadastre-se:is(:hover, :focus) {
+        color: var(--rosa);
+     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

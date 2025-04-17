@@ -1,0 +1,835 @@
+/*-------------------------*\
+ propriedades customizadas
+\*-------------------------*/
+
+:root{
+
+    --rosa : #B18F8F;
+    --rosa2 : #E1C7C7;
+    --amarelo : #C08A01;
+    --cinza : #847F7F;
+    --preto : #000000;
+    
+    /*Tipografia*/
+    
+    --ff-gidugu: "Gidugu", sans-serif;
+    --ff-epilogue: "Epilogue", sans-serif;
+    --ff-gideon-roman: "Gideon Roman", serif;
+    --ff-inter: "Inter", sans-serif;
+    --ff-Euphoria_Script: "Euphoria Script", cursive;
+    --ff-bitter: "Bitter", serif;
+    --ff-Josefin_Sans: "Josefin Sans", sans-serif;
+    
+    
+    --fs-40: 4rem;/*4x16 - 16=px*/
+        --fs-30: 3rem;
+        --fs-24: 2.4rem;
+        --fs-18: 1.8rem;
+        --fs-14: 1.4rem;
+        --fs-12: 1.3rem;
+    
+        --fw-300: 300;
+        --fw-500: 500;
+        --fw-600: 600;
+        --fw-700: 700;
+    
+    
+    }
+    
+    /*reset*/
+    
+    
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    
+    li {
+        list-style: none;
+    }
+    
+    a,
+    img,
+    span,
+    data,
+    input,
+    button,
+    textarea,
+    icon-icon {
+        display: block;
+    }
+    
+    a {
+        color: inherit;
+    
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    
+    img {
+        height: auto;
+    }
+    
+    input,
+    select,
+    textarea {
+        background: none;
+        border: none;
+        font: inherit
+    }
+    
+    input,
+    select,
+    textarea {
+        width: 100%;
+    }
+    
+    
+    html {
+        font-family: var(--ff-epilogue);
+        font-size: 10px;
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        background-color: whitesmoke;
+        color: #1E1E1E;
+        font-size: 1.6rem;
+        line-height: 2;
+       
+    
+    }
+    
+    
+    button {
+        cursor: pointer;
+    }
+    
+    
+    
+    :focus-visible {
+        outline-offset: 4px;
+    }
+    
+    ::-webkit-scrollbar {
+        width: 10px;
+    
+    }
+    
+    ::-webkit-scrollbar-track {
+        background-color: hsl(0, 4%, 91%);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--rosa2);
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--rosa);
+    }
+    
+    /*-------------------------*\
+     HEADER
+    \*-------------------------*/
+    
+    .header {
+        position: sticky;        
+        top: 0;                  
+        z-index: 1000;          
+        background-color: white;
+        transition: all 0.3s ease; 
+        box-shadow: none;      
+        border-radius: 0px 0px 40px 40px; 
+      }
+    
+    
+      .header::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0px;
+        background-color: rgba(0, 0, 0, 0.1); 
+        transition: height 0.3s ease;
+      }
+      
+     
+      body:has(main:hover) .header {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+      }
+    
+     
+    /*logo*/
+    nav img{
+        width: 130px;
+        height: 130px;
+        margin-left: 70px;
+        
+    }
+    
+    
+    .nav-toggle-btn{
+        color: #847F7F;
+        background-color: transparent;
+        display: block;
+        font-size: 40px;
+        border: none;
+        margin-left: 20px;
+           
+    }
+    
+    .navbar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 100px;
+        font-family: var(--ff-gidugu);
+        font-size: var(--fs-24);
+        color: #847F7F;
+        padding: 15px;
+        text-shadow: 2px 2px 4px rgba(75, 75, 75, 0.3);
+        
+       
+    }
+    
+    .navbar-header a{
+        color: #847F7F;
+        font-weight: 800;
+        cursor: pointer;
+        position: relative;
+        border: none;
+        background: none;
+        text-transform: uppercase;
+        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition-duration: 400ms;
+        transition-property: color;
+        
+    }
+    
+    .navbar-header a:focus,
+    li :hover {
+      color: #B18F8F;
+    }
+    
+    .navbar-header a:focus:after,
+    .navbar-header a:hover:after {
+      width: 100%;
+      left: 0%;
+    }
+    
+    .navbar-header a:after {
+      content: "";
+      pointer-events: none;
+      bottom: -2px;
+      left: 50%;
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: #B18F8F;
+      transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition-duration: 400ms;
+      transition-property: width, left;
+    }
+    
+    
+    
+    
+    .navbar-item{
+        gap: 25px;
+    }
+    
+    
+    /*-------------------------*\
+     BARRA DE PESQUISA
+    \*-------------------------*/
+    
+    
+    .pesquisa{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+        margin-top: 30px;
+    }
+    
+    
+    
+    .input-group {
+        display: flex;
+        align-items: center;
+        background-color: var(--rosa2);
+        padding: 8px 16px 8px 8px;
+        border-radius: 24px;
+        gap: 8px;
+        width: 70%;
+        height: 40px;
+      
+       
+        
+    }
+    
+    /* Ícone do input de pesquisa */
+    .input-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 32px;
+        min-height: 32px;
+        border-radius: 100%;
+        color:  #1E1E1E;
+        cursor: pointer;
+    }
+    
+    /* Campo de input de pesquisa */
+    .input-field {
+        width: 100%;
+        border: none;
+        background-color: transparent;
+    }
+    
+    
+    .input-field:focus {
+        outline: none;
+    }
+    
+    input::placeholder {
+        color:  #1E1E1E;
+        font-family: var(--ff-epilogue);
+    }
+    
+    
+    
+
+    /*-------------------------*\
+     SEÇÃO
+    \*-------------------------*/
+
+    .namesecao{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+  padding: 50px;
+}
+
+h1 {
+  margin: 0 15px;
+  font-family: var(--ff-Josefin_Sans);
+  font-size: var(--fs-30);
+  color: #1E1E1E;
+  letter-spacing: 0.9rem;
+  
+}
+
+.linha {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #000;
+  margin: 0 100px;
+  
+}
+    
+    .container-secao {
+        width: 100%;
+       
+        padding: 80px 0;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+    
+    .secao{
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        margin: 0 10%;
+    }
+    
+    
+    .circle {
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-in-out;
+    }
+    
+    
+    .circle:hover {
+        
+        transform: scale(1.05);
+        
+    }
+    
+    .secao h3 {
+        font-family: var(--ff-gideon-roman);
+        margin-top: 20px;
+    }
+
+
+   
+    
+    
+    
+    
+/*-------------------------*\
+     SEÇÃO PRODUTOS
+\*-------------------------*/
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    min-height: 100vh;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 80px;
+    width: 100%;
+    justify-items: center;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100%;
+
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.product-card button {
+    width:  100%;
+    padding: 10px 20px;
+    background-color: var(--rosa);
+    color: white;
+    letter-spacing: 0.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+    margin-top: auto; 
+}
+
+.product-card button:hover {
+    background-color: #a28484;
+}
+
+
+
+    
+    /*-------------------------*\
+     FOOTER
+    \*-------------------------*/
+    
+    footer {
+        background-color: #D9D9D9;
+        color: #333;
+        margin-top: 50px;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        padding-left: 200px;
+    }
+    
+    .informacoes, .atendimentos, .redes-sociais {
+        width: 30%;
+    }
+    
+    .footer-content h3 {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #333;
+    }
+    
+    .formas-pagamento {
+        text-align: center;
+        margin-bottom: 20px;
+        display: flex;
+    }
+    
+    .pagamentos-text{
+        margin-top: 20px;
+    }
+    
+    .formas-pagamento{
+        padding-left: 180px;
+    }
+    
+    .formas-pagamento img {
+        margin-left: 20px;
+        width: auto;
+        height: 40px;
+    }
+    
+    .iconis-footer{
+        display: flex;
+        height: 35px;
+        margin-right: 10px;
+        gap: 10px;
+      
+    }
+    
+    .footer-bottom {
+        background-color: var(--rosa);
+        padding: 10px;
+        text-align: center;
+        font-size: 14px;
+        color: #000;
+        letter-spacing: 0.1em; 
+        font-weight: var(--fw-500);
+    }
+    
+    
+    
+    .back-top-btn {
+        display: none;
+    }
+    
+    
+
+    
+    
+    
+    
+    
+    
+    @media screen and (max-width: 480px) {
+        :root{
+          --fs-40: 2.5rem;
+          --fs-30: 1.8rem;
+          --fs-24: 1.5rem;
+          --fs-18: 1.0rem;
+          --fs-14: 1.0rem;
+          --fs-12: 1.0rem;
+        }
+
+
+
+        nav img{
+        width: 120px;
+        height: 120px;
+        margin-left: 30px;
+        
+    }
+    
+        .navbar-link{
+            display: none;
+        
+        
+        }
+    
+    
+        .navbar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            font-size: var(--fs-30);
+            padding: 10px;
+           
+        }
+    
+        .nav-toggle-btn{
+            font-size: 30px;
+            left: 20px;
+            
+        }
+    
+    /*-------------------------*\
+     BARRA DE PESQUISA
+    \*-------------------------*/
+    
+    
+        .pesquisa{
+            display: flex;
+            justify-content: none;
+            align-items: none;
+            margin-bottom: 20px;
+        
+        }
+    
+    
+    
+        .input-group {
+            display: flex;
+            align-items: none;
+            padding: 6px 12px 6px 6px;
+            border-radius: 24px;
+            gap: 3px;
+            width: 60%;
+            height: 35px;
+            
+        }
+    
+    
+    
+    
+    
+    /*-------------------------*\
+     SEÇÃO
+    \*-------------------------*/
+
+
+
+
+
+        .namesecao{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+        padding: 40px;
+        }
+
+        h1 {
+        margin: 0 10px;
+        font-family: var(--ff-Josefin_Sans);
+        font-size: var(--fs-40);
+        color: #1E1E1E;
+        letter-spacing: 0.9rem;
+        
+        }
+
+        .linha {
+        flex-grow: 1;
+        height: 1px;
+        background-color: #000;
+        margin: 0 15px;
+        
+        }
+            
+    
+    
+        .container-secao{
+            margin-top: 5px;
+        }
+    
+        .secao {
+            margin-left: 110px;
+            justify-content: center;   
+            gap: 15px;                 
+        }
+    
+        .secao a {
+            width: 45%;                
+            text-align: center;        
+        }
+    
+        .circle {
+            width: 90px;              
+            height: 90px;
+        }
+    
+        .circle img {
+            width: 90px;              
+            height: 90px;
+        }
+    
+        .secao h3 {
+            font-size: 13px;          
+        }
+    
+        .secao {
+            display: grid;             
+            grid-template-columns: repeat(2, 1fr);  
+            gap: 25px;         
+        }
+    
+
+
+
+
+
+
+    /*-------------------------*\
+     JOIAS
+    \*-------------------------*/
+
+    .product-card img {
+        width: 100%;
+        height: 100px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+
+.product-grid {
+    padding: 30px;
+    gap: 30px;
+   
+}
+
+
+.product-card button {
+    
+    letter-spacing: 0.1rem;
+    
+    font-size: 1rem;
+    
+}
+
+    
+    /*-------------------------*\
+     FOOTER
+    \*-------------------------*/
+    
+    footer {
+        background-color: #D9D9D9;
+        color: #333;
+     
+    }
+    
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    
+        padding-left: 25px;
+    }
+    
+    .informacoes, .atendimentos, .redes-sociais {
+        width: 30%;
+    }
+    
+    .footer-content h3 {
+        margin-bottom: 10px;
+        font-size: var(--fs-24);
+    }
+    
+    
+    .formas-pagamento {
+        text-align: center;
+        margin-bottom: 20px;
+        display: flex;
+    }
+    
+    .pagamentos-text{
+        margin-top: 15px;
+    }
+    
+    .formas-pagamento{
+    
+        padding-left: 10px;
+    }
+    
+    .formas-pagamento img {
+        margin-left: 20px;
+        width: auto;
+        height: 30px;
+    }
+    
+    .iconis-footer{
+        display: flex;
+        height: 30px;
+        margin-right: 0px;
+        gap: 10px;
+      
+    }
+    
+    .footer-bottom {
+        background-color: var(--rosa);
+        padding: 10px;
+        text-align: center;
+        font-size: var(--fs-18);
+        color: #000;
+        letter-spacing: 0.1em; 
+        
+    }
+
+
+
+    /*-------------------------*\
+     BACK TOP BUTTON
+    \*-------------------------*/
+    
+    
+    
+
+    .back-top-btn {
+        display: flex;
+        position: fixed;
+        bottom: 70px;
+        right: 30px;
+        background-color: var(--rosa);
+        color: #fff;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 50%;
+        z-index: 4;
+        transition: all 0.3s ease;
+        transform: rotate(-90deg);
+    }
+    
+    
+    .back-top-btn:is(:hover, :focus) {
+        color: var(--rosa2);
+    }
+
+    
+    
+    
+    
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    

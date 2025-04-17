@@ -1,0 +1,272 @@
+:root{
+
+--rosa : #B18F8F;
+--rosa2 : #E1C7C7;
+--amarelo : #C08A01;
+--cinza : #847F7F;
+--preto : #000000;
+
+/*Tipografia*/
+
+--ff-gidugu: "Gidugu", sans-serif;
+--ff-epilogue: "Epilogue", sans-serif;
+--ff-gideon-roman: "Gideon Roman", serif;
+--ff-inter: "Inter", sans-serif;
+--ff-Euphoria_Script: "Euphoria Script", cursive;
+--ff-bitter: "Bitter", serif;
+--ff-Josefin_Sans: "Josefin Sans", sans-serif;
+
+
+--fs-40: 4rem;/*4x16 - 16=px*/
+    --fs-30: 3rem;
+    --fs-24: 2.4rem;
+    --fs-18: 1.8rem;
+    --fs-14: 1.4rem;
+    --fs-12: 1.3rem;
+
+    --fw-300: 300;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+
+
+}
+
+a {
+  text-decoration: none; 
+  color: inherit;         
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    
+  }
+
+  
+  
+  
+  h1 {
+    font-size: 3rem;
+    color: white;
+    z-index: 1;
+  }
+  
+  .cart {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 100%;
+    background-color: #F3F1F1;
+    z-index: 10;
+    box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px 0px 0px 20px;
+    opacity: 0;  
+    position: absolute; 
+    right: -300px; 
+    animation: slide-in 1s forwards; 
+  }
+
+
+  @keyframes slide-in {
+    0% {
+      right: -300px; 
+      opacity: 0; 
+    }
+    100% {
+      right: 0; 
+      opacity: 1; 
+    }
+  }
+  
+
+  .start-cart{
+    padding: 15px;
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #000;
+    align-self: flex-end;
+    cursor: pointer;
+    margin-left: auto;
+    transition: all ease 0.1s;
+   
+  }
+
+  .close-btn:active {
+  transform: translateY(5px);
+  box-shadow: 0px 0px 0px 0px #a29bfe;
+}
+
+  
+  h2 {
+    
+    font-size: 1.8rem;
+    color: var(--rosa);
+    font-family: var(--ff-Josefin_Sans);
+  }
+  
+  .cart-item {
+    margin-top: 40px;
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .product-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-left: 20px;
+  }
+  
+  .product-details p {
+    font-family: var(--ff-inter);
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 0.9rem;
+    margin-left: 20px;
+  }
+
+  .product-details h3 {
+    font-family: var(--ff-inter);
+    color: #333;
+    font-size: 0.9rem;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+
+  
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    background-color: var(--rosa);
+    max-width: 150px;
+    justify-content: center;
+    margin-left: 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+  
+  .quantity-controls button {
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    margin: 0 20px;
+  }
+
+  .quantity-controls img {
+    width: 20px;
+  }
+
+  hr{
+    height: 1px; 
+    background-color: #333; 
+    border: none; 
+  }
+
+  .hr{
+    margin-top: 450px;
+    height: 1px; 
+    background-color: #333; 
+    border: none; 
+  }
+
+
+  .subtotal {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-top: auto;
+    padding: 10px;
+  }
+
+  .subtotal p{
+    font-family: var(--ff-Josefin_Sans);
+    color: var(--amarelo);
+    font-size: var(--fs-14);
+  }
+
+  .subtotal h3{
+    font-family: var(--ff-Josefin_Sans);
+    color: var(--rosa);
+    font-size: var(--fs-14);
+    text-shadow: 2px 2px 3px rgba(88, 88, 88, 0.5);
+  }
+
+  
+  .finalize-btn {
+    background-color: #fff;
+    color: var(--rosa);
+    border: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 40px;
+    border-radius: 5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 2px 4px rgba(145, 144, 144, 0.5);
+    animation: button-shimmer 2s infinite;
+    transition: all 0.3s ease-in-out;
+}
+    
+
+.finalize-btn:hover {
+
+  animation: button-particles 1s ease-in-out infinite;
+  transform: translateY(-2px);
+}
+
+
+.finalize-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+@keyframes button-shimmer {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
+
+
+@keyframes button-particles {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
