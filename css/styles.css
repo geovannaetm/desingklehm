@@ -249,6 +249,341 @@ li :hover {
 }
 
 
+ /* Sidebar */
+.cart {
+  position: fixed;
+  top: 0;
+  left: -450px;
+  width: 450px;
+  height: 100%;
+  background-color: #F3F1F1;
+  z-index: 2000;
+  box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: left 0.3s ease;
+  overflow-y: auto;
+}
+
+.cart.active {
+  left: 0;
+}
+
+.start-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.menu_options ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu_options li {
+  margin: 10px 0;
+}
+
+.menu_options a {
+  text-decoration: none;
+  color: #847F7F;
+  font-weight: 600;
+}
+
+.sub_options h3 a {
+  text-decoration: none;
+  color: #B18F8F;
+}
+
+
+/* Sidebar carrinho */
+.cartcarrinho {
+  position: fixed;
+  top: 0;
+  right: -450px;
+  width: 450px;
+  height: 100%;
+  background-color: #F3F1F1;
+  z-index: 2000;
+  box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+}
+
+.cartcarrinho.active {
+  right: 0;
+}
+
+.start-carrinho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.cart-item {
+  margin-top: 40px;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.product-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: 20px;
+}
+
+.product-details p,
+.product-details h3 {
+  font-family: var(--ff-inter);
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 0.9rem;
+  margin-left: 20px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  background-color: var(--rosa);
+  max-width: 150px;
+  justify-content: center;
+  margin-left: 20px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.quantity-controls button {
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  margin: 0 20px;
+}
+
+.quantity-controls img {
+  width: 20px;
+}
+
+.subtotal {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-top: auto;
+  padding: 10px;
+}
+
+.subtotal p,
+.subtotal h3 {
+  font-family: var(--ff-Josefin_Sans);
+  font-size: var(--fs-14);
+}
+
+.subtotal p {
+  color: var(--amarelo);
+}
+
+.subtotal h3 {
+  color: var(--rosa);
+  text-shadow: 2px 2px 3px rgba(88, 88, 88, 0.5);
+}
+
+.finalize-btn {
+  background-color: #fff;
+  color: var(--rosa);
+  border: none;
+  padding: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 40px;
+  border-radius: 5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 2px 4px rgba(145, 144, 144, 0.5);
+}
+
+
+/* Sidebar login */
+
+.login {
+  position: fixed;
+  top: 0;
+  right: -450px;
+  width: 450px;
+  height: 100%;
+  background-color: #F3F1F1;
+  z-index: 2000;
+  box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+}
+
+.login.active {
+  right: 0;
+}
+
+
+
+.btn-social {
+    width: 100%;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid #404040; 
+    align-items: center;
+    justify-content: center;
+   
+}
+
+
+.grupo-btnsocial {
+    padding-bottom: 20px;
+    width: 80%;
+    display: flex;
+    
+}
+
+
+
+.grupo {
+    margin-bottom: 15px;
+    text-align: center;
+    
+    
+    
+}
+
+.grupo span {
+    margin-top: 10px;
+    display: flex;
+   
+}
+
+
+
+.cadastro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    
+}
+
+
+.input-field {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+}
+
+.input-field:focus {
+    outline: none;
+}
+    
+
+ .input-register{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: 2px solid #404040; 
+    padding: 8px 16px 8px 8px;
+    border-radius: 10px;
+    gap: 8px;
+    width: 310px;
+    height: 35px;
+    transition: all 0.3s ease;
+   
+    
+}
+
+
+
+
+.input-register:is(:hover, :focus) {
+    cursor: text; 
+    border: 2px solid var(--rosa);
+    
+}
+
+
+.enviar-btn{
+  background-color: var(--rosa); 
+  color: white; 
+  padding: 10px 20px;
+  border: none; 
+  border-radius: 5px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  margin-bottom: 30px;
+  transition: background-color 0.3s ease;
+}
+  
+
+
+.enviar-btn:hover {
+  background-color: var(--rosa2);
+}
+
+
+.enviar-btn:active {
+  background-color:rgb(160, 129, 129);
+ 
+}
+
+
+
+.esqueci-senha {
+    padding-bottom: 25px;
+    color: var(--amarelo);
+  
+}
+
+.esqueci-senha{
+    color: var(--amarelo);
+    transition: .25s ease;
+}
+
+.esqueci-senha:is(:hover, :focus) {
+    color: var(--rosa);
+    text-shadow: -5px 0px 15px rgba(0, 0, 0, 0.1) ;
+ }
+
+.cadastrar {
+    margin-top: 20px;
+}
+
+.cadastre-se{
+    color: var(--amarelo);
+    transition: .25s ease;
+}
+
+.cadastre-se:is(:hover, :focus) {
+    color: var(--rosa);
+ }
+
+
+
+
 /*-------------------------*\
  BARRA DE PESQUISA
 \*-------------------------*/
