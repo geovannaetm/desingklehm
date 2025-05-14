@@ -16,7 +16,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Epilogue:ital,wght@0,100..900;1,100..900&family=Euphoria+Script&family=Gideon+Roman&family=Gidugu&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
     
-
+    <!--Link SwiperJs / CARROSEL -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 </head>
 
@@ -392,54 +393,79 @@
     <!--DESTAQUE-->
 
 
-    <div class="container-destaque">
         <div class="destaques-container">
           <div class="linha"></div>
           <span class="destaques">DESTAQUES</span>
           <div class="linha"></div>
         </div>
-        
-        <p class="subtitulo-destaque">Conheça as Jóias que mais vendem no site e garanta já a sua</p>
-        
-        <div class="produtos">
 
-        <a href="#">
-          <button class="btn-carrosel"><img src="img/icons8-voltar-50.png"></button> 
-        </a>
-          <div class="produto produto_none">
-            <img src="img/bracelete-destaque.png" alt="Bracelete banhado a ouro - 18k">
-            <p>Bracelete torcido banhado em ouro-18k</p>
-            <p class="preco">R$ 1.500,00</p>
-            <a href="destaquebracelete.html">
-            <button class="comprar-destaque">Comprar</button>
-            </a>
-          </div>
-      
-          <div class="produto">
-            <img src="img/solitaria-destaque.png" alt="Solitaire em prata cravejada">
-            <p>Solitária em prata cravejada</p>
-            <p class="preco">R$ 700,00</p>
-            <a href="destaquesolitaria.html">
-            <button class="comprar-destaque">Comprar</button>
-            </a>
-          </div>
-      
-          <div class="produto produto_none">
-            <img src="img/colar-destaque.png" alt="Colar em ouro - 18k">
-            <p>Colar em ouro - 18k detalhes em Búzios</p>
-            <p class="preco">R$ 2.300,00</p>
-            <a href="destaquecolar.html">
-            <button class="comprar-destaque">Comprar</button>
-            </a>
-          </div>
-          <a href="#">
-          <button class="btn-carrosel"><img src="img/icons8-avançar-50.png"></button>  
-        </a>
-        
-       
+        <p class="subtitulo-destaque">Conheça as Jóias que mais vendem no site e garanta já a sua</p>
+
+        <div class="container-destaque swiper">
+            <div class="card-wrapper">
+                <ul class="card-list swiper-wrapper">
+                    <li class="card-item swiper-slide">
+                        <a href="destaquebracelete.html" class="card-link">
+                            <img src="img/bracelete-destaque.png" alt="Img destaque" class="card-image">
+                            
+                            <p>Bracelete torcido banhado em ouro-18k</p>
+                            <p class="preco">R$ 1.500,00</p>
+                            <button class="comprar-destaque">Comprar</button>
+                        </a>
+                    </li>
+
+                     <li class="card-item swiper-slide">
+                        <a href="destaquesolitaria.html" class="card-link">
+                            <img src="img/solitaria-destaque.png" alt="Img destaque" class="card-image">
+                            
+                             <p>Solitária em prata cravejada - Ouro Branco</p>
+                             <p class="preco">R$ 700,00</p>
+                            <button class="comprar-destaque">Comprar</button>
+                        </a>
+                    </li>
+
+                     <li class="card-item swiper-slide" >
+                        <a href="destaquecolar.html" class="card-link">
+                            <img src="img/colar-destaque.png" alt="Img destaque" class="card-image">
+                            
+                             <p>Colar em ouro - 18k detalhes em Búzios</p>
+                             <p class="preco">R$ 2.300,00</p>
+                             <button class="comprar-destaque">Comprar</button>
+                        </a>
+                    </li>
+
+                     <li class="card-item swiper-slide">
+                        <a href="#" class="card-link">
+                            <img src="img/bracelete-destaque.png" alt="Img destaque" class="card-image">
+                            
+                            <p>Bracelete torcido banhado em ouro-18k</p>
+                            <p class="preco">R$ 1.500,00</p>
+                            <button class="comprar-destaque">Comprar</button>
+                        </a>
+                    </li>
+
+                     <li class="card-item swiper-slide">
+                        <a href="#" class="card-link">
+                            <img src="img/bracelete-destaque.png" alt="Img destaque" class="card-image">
+                            
+                            <p>Bracelete torcido banhado em ouro-18k</p>
+                            <p class="preco">R$ 1.500,00</p>
+                            <button class="comprar-destaque">Comprar</button>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                <div class="swiper-pagination"></div>
+                <div class="swiper-slide-button swiper-button-prev"></div>
+                <div class="swiper-slide-button swiper-button-next"></div>
+            </div>
+        </div>
+
         <hr class="hr-destaque">
-      </div>
-      
+
+
+
 
 
 
@@ -563,10 +589,14 @@
 
 
 
+      <!--LINK JS SWIIPER SCRIPT-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+
+     <!--Link JS-->
     <script src="js/script.js"></script>
 
-
+   
 
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
