@@ -115,7 +115,7 @@
     cursor: pointer;
     margin-left: auto;
     transition: all ease 0.1s;
-   
+  
   }
 
   .close-btn:active {
@@ -186,6 +186,7 @@ li:hover {
     font-family: var(--ff-inter);
     color: var(--amarelo);
     margin-bottom: 20px;
+    margin-top: 30px;
     letter-spacing: 0.2rem;
     transition: transform 0.3s ease, color 0.3s ease;
    

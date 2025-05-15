@@ -249,8 +249,9 @@ li :hover {
 }
 
 
- /* Sidebar */
-.cart {
+ /* Sidebar Menu*/
+
+.menu {
   position: fixed;
   top: 0;
   left: -450px;
@@ -262,16 +263,21 @@ li :hover {
   padding: 20px;
   transition: left 0.3s ease;
   overflow-y: auto;
+  
 }
 
-.cart.active {
+.menu.active {
   left: 0;
 }
 
-.start-cart {
+.start-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px;
+  font-family: var(--ff-Josefin_Sans);
+  color: var(--rosa);
+  text-shadow: 2px 2px 4px rgba(75, 75, 75, 0.3);
 }
 
 .close-btn {
@@ -279,27 +285,88 @@ li :hover {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  transition: all ease 0.1s;
 }
+
+ .close-btn:active {
+  transform: translateY(5px);
+ 
+}
+
 
 .menu_options ul {
   list-style: none;
   padding: 0;
+  margin-top: 30px;
+   
 }
+
 
 .menu_options li {
   margin: 10px 0;
+  font-size: 2rem;
+ 
+ 
 }
 
 .menu_options a {
-  text-decoration: none;
   color: #847F7F;
   font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+    
 }
 
-.sub_options h3 a {
-  text-decoration: none;
-  color: #B18F8F;
+
+.menu_options li:focus,
+a:hover {
+  color: var(--rosa);
+  
 }
+
+.menu_options a:focus:after,
+.menu_options a:hover:after {
+  width: 100%;
+  left: 0%;
+  
+} 
+
+.menu_options a:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #B18F8F;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+
+.sub_options h3 a {
+ 
+  text-decoration: none;
+  font-family: var(--ff-inter);
+  color: var(--amarelo);
+  margin-bottom: 5px;
+  letter-spacing: 0.4rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+.sub_options h3 a:hover{
+    color: #a17507;
+    transform: scale(1.05);
+}
+
 
 
 /* Sidebar carrinho */
