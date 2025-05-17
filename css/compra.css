@@ -343,6 +343,52 @@
         
       }
 
+      .checkbox-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-group label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #e64545;
+  color: white;
+  font-size: 1.2em;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.checkbox-group input[type="checkbox"]:checked + label {
+  background-color: #4da269;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       
       .botao-carrinho {
         margin-top: 20px;

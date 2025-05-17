@@ -100,16 +100,42 @@
                 <p class="preco">R$ 1500,00</p>
                 <p class="parcelamento">ou 10x de R$ 23,00</p>
       
+                
+
                 <p class="tamanho-label">Tamanho</p>
                 <div class="tamanhos">
-                  <button>17</button>
-                  <button>18</button>
-                  <button>19</button>
-                  <button>20</button>
+
+                <form id="ringForm">
+  <div class="checkbox-group">
+    <input type="checkbox" id="size1" name="ringSize" value="1" />
+    <label for="size1">1</label>
+
+    <input type="checkbox" id="size2" name="ringSize" value="2" />
+    <label for="size2">2</label>
+
+    <input type="checkbox" id="size3" name="ringSize" value="3" />
+    <label for="size3">3</label>
+
+    <input type="checkbox" id="size4" name="ringSize" value="4" />
+    <label for="size4">4</label>
+
+    <input type="checkbox" id="size5" name="ringSize" value="5" />
+    <label for="size5">5</label>
+  </div>
+
+  <a href="index.html">
+  <button type="submit" id="addToCartBtn" disabled>Adicionar ao Carrinho</button>
+  </a>
+</form>
+                
+
+                  
                 </div>
-                <button class="botao-carrinho"><a href="carrinho.html">Adicionar ao carrinho</a></button>
+                
             </div>
             </div>
+
+            
       
             <section class="descricao">
               <h3>DESCRIÇÃO</h3>
@@ -193,7 +219,7 @@
 
 
 
-
+    <script src="js/script.js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
