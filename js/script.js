@@ -171,17 +171,3 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
 
-
-  // SELECIONAR TAMANHO COMPRA
-  
-  document.addEventListener('DOMContentLoaded', () => {
-  const checkboxes = document.querySelectorAll('input[name="ringSize"]');
-  const addToCartBtn = document.getElementById('addToCartBtn');
-
-  checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', () => {
-      const isAnyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
-      addToCartBtn.disabled = !isAnyChecked;
-    });
-  });
-});

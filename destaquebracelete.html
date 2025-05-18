@@ -25,59 +25,227 @@
     <header class="header">
 
 
-        <nav class="navbar">
-            <ul class="navbar-header">
-                <li>
-                    <button class="nav-toggle-btn">
-                        <a href="menu.html">
-                            <ion-icon name="menu-outline"></ion-icon>
-                        </a>
-                    </button>
-                </li>
-    
-                <li>
-                    <a href="index.html" class="navbar-link" >HOME</a>
-                </li>
-    
-                <li>
-                    <a href="#joias" class="navbar-link" >JÓIAS</a>
-                </li>
-    
-    
-                <li class="logo">
-                    <img src="img/logo.jpg" alt="Logo" class="logo">
-                </li>
-    
-                <li>
-                    <a href="cuidados.html" class="navbar-link" >CUIDADOS</a>
-                </li>
-    
-                <li>
-                    <a href="#contatos" class="navbar-link" >CONTATOS</a>
-                </li>
-    
-                <div class="">
-                    <ul class="navbar-header navbar-item">
-                        <li>
-                            <a href="carrinho.html" class="" ><ion-icon name="bag-handle-outline"></ion-icon></a>
-                        </li>
-    
-                        <li>
-                            <a href="login.html" class="" ><ion-icon name="person-outline"></ion-icon></a>
-                        </li>
-    
-    
-                    </ul>
-    
+    <nav class="navbar">
+        <ul class="navbar-header">
+            
+            <li class="dropdown-item">
+                <button class="nav-toggle-btn " id="menuToggle">
+                    
+                        <ion-icon name="menu-outline"></ion-icon>
+                   
+                </button>
+
+                <!-- Login sobreposto -->
+       
+
+            </li>
+
+            <li>
+                <a href="index.html" class="navbar-link" >HOME</a>
+            </li>
+
+            <li>
+                <a href="#banner" class="navbar-link" >JÓIAS</a>
+            </li>
+
+
+            <li class="logo">
+                <img src="img/logo.jpg" alt="Logo" class="logo">
+            </li>
+
+            <li>
+                <a href="cuidados.html" class="navbar-link" >CUIDADOS</a>
+            </li>
+
+            <li>
+                <a href="#contatos" class="navbar-link" >CONTATOS</a>
+            </li>
+
+            <div class="">
+                <ul class="navbar-header navbar-item">
+                    <li id="cartToggle">
+                        
+                       <ion-icon name="bag-handle-outline"></ion-icon>
+                    </li>
+
+                    <li id="loginToggle">
+                        
+                       <ion-icon name="person-outline"></ion-icon>
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </ul>
+
+
+    </nav>
+
+    </header>
+
+
+    <!--MENU-->
+
+     <div class="menu" id="sidebar">
+
+            <div class="start-menu">
+                <h2>SUAS PREFERÊNCIAS</h2>
+               
+                <button class="close-btn" id="closeSidebar">X</button>
+               
+            </div>
+
+            <hr>
+
+
+            <div class="menu_options">
+                <ul>
+                    <li><a href="solitarias.html">Solitárias</a></li>
+                    <li><a href="pagexterna.html">Colares</a></li>
+                    <li><a href="Piercings.html">Piercings</a></li>
+                    <li><a href="aliancas.html">Alianças</a></li>
+                    <li><a href="Pulseiras.html">Pulseiras</a></li>
+                    <li><a href="Braceletes.html">Braceletes</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="sub_options">
+
+                <h3><a href="colecaodeverao.html"> Coleção de verão </a> </h3>    
+                <h3><a href="cuidados.html">Cuidados das Jóias </a> </h3>
+                <h3><a href="index.html#contatos"> Contato </a> </h3>
+
+            </div>
+
+            
+
+
+        </div>
+
+     <!--carrinho-->
+
+       <div class="cartcarrinho" id="cartSidebar">
+        <div class="start-carrinho">
+          <h2>CARRINHO</h2>
+          <button class="close-btn" id="closeCart">X</button>
+        </div>
+        <hr>
+        <div class="cart-item">
+          <img src="img/bracelete-carrinho.png" alt="Bracelete Aro Ondulado" class="product-image">
+          <div class="product-details">
+            <h3>Bracelete Aro Ondulado Ouro</h3>
+            <p>Ouro</p>
+            <h3>R$ 230,00</h3>
+            <div class="quantity-controls">
+              <button><img src="img/icons8-lixeira-25.png" alt="Remover"></button>
+              <span>1</span>
+              <button><img src="img/icons8-add-25.png" alt="Adicionar"></button>
+            </div>
+          </div>
+        </div>
+        <hr class="hr-carrinho">
+        <div class="subtotal">
+          <p>Subtotal</p>
+          <h3>R$ 230,00</h3>
+        </div>
+        <button class="finalize-btn"><span>Finalizar</span></button>
+      </div>
+
+
+
+
+    <!-- Login sobreposto -->
+        <div class="login" id="loginSidebar">
+
+            <button class="close-btn" id="closeLogin">X</button>
+            <h2>Login</h2>
+
+            <div class="grupo-btnsocial">
+                
+                <button class="btn-social email">
+                    <a href="index.html#cadastro">
+                    <span> Receber Código de Acesso por E-mail</span>
+                    </a>
+                </button>
+            
+            </div>
+            
+
+            <div class="">
+                <div class="grupo">
+
+                    
+                    <span >Entre com seu E-mail:</span>
+
+                    
+
+                  <!--email-->
+
+            <div id="cadastro" class="cadastro">
+        
+                <div class="input-register">
+        
+                    <input 
+                        id="register" 
+                        type="text" 
+                        class="input-field" 
+                        placeholder=""
+                    >
                 </div>
+        
+            </div>  
+
+        
+            </div>
+
+
+            <!------------------------------>
+
+            <div class="grupo">
+
+                    <span >Senha:</span>
+                   
+
+                    <!--senha-->
+
+        <div id="cadastro" class="cadastro">
+        
+            <div class="input-register">
     
-            </ul>
+                <input 
+                    id="register" 
+                    type="text" 
+                    class="input-field" 
+                    placeholder=""
+                >
+            </div>
     
-    
-        </nav>
-    
-        </header>
-    
+        </div>  
+
+        <button class="enviar-btn">Enviar</button>
+
+        </div>
+
+
+
+                <div class="esqueci-senha">
+                <a href="index.html#cadastro" class="esqueci-senha"><span>Esqueci minha senha</span></a>
+                </div>
+
+
+                <hr>
+                
+
+                <p class="cadastrar">Não tem uma conta? <a href="cadastreconta.html" class="cadastre-se">Cadastre-se</a></p>
+
+            </div>
+
+
+        </div>
     
 
      
@@ -102,12 +270,31 @@
       
                 <p class="tamanho-label">Tamanho</p>
                 <div class="tamanhos">
-                  <button>17</button>
-                  <button>18</button>
-                  <button>19</button>
-                  <button>20</button>
+                <form id="ringForm">
+                    <div class="checkbox-group">
+                    <input type="radio" id="size1" name="ringSize" value="16" />
+                    <label for="size1">16</label>
+
+                    <input type="radio" id="size2" name="ringSize" value="17" />
+                    <label for="size2">17</label>
+
+                    <input type="radio" id="size3" name="ringSize" value="18" />
+                    <label for="size3">18</label>
+
+                    <input type="radio" id="size4" name="ringSize" value="19" />
+                    <label for="size4">19</label>
+
+                    <input type="radio" id="size5" name="ringSize" value="20" />
+                    <label for="size5">20</label>
+                    </div>
+
+                    <a href="#">
+                    <button type="submit" id="addToCartBtn" disabled>
+                    Adicionar ao Carrinho
+                    </button>
+                    </a>
+                </form>
                 </div>
-                <button class="botao-carrinho"><a href="carrinho.html">Adicionar ao carrinho</a></button>
             </div>
             </div>
       
@@ -191,7 +378,11 @@
 
 
 
+    <!--SCRIPT-->
+    <script src="js/script.js"></script>
 
+
+    <script src="js/compra.js"></script>
 
 
 
