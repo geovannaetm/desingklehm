@@ -75,6 +75,37 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+//campo login 
+
+
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Impede o envio do formulário
+
+  const email = document.getElementById('email').value;
+  const senha = document.getElementById('senha').value;
+  const mensagem = document.getElementById('mensagem');
+
+  // Validação simples
+  if (email === 'designsklehm@exemplo.com' && senha === 'senha123') {
+    mensagem.style.color = 'green';
+    mensagem.style.textAlign = 'center';
+    mensagem.textContent = 'Login bem-sucedido!';
+    mensagem.style.marginTop = '20px';
+    // Redirecionar ou realizar outras ações aqui
+  } else {
+    mensagem.style.color = 'red';
+    mensagem.style.textAlign = 'center';
+    mensagem.textContent = 'E-mail ou senha incorretos.';
+    mensagem.style.marginTop = '20px';
+  }
+});
+
+
+
+
+
+
+
 //CARROSEL
 
 new Swiper('.card-wrapper', {
