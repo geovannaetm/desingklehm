@@ -170,4 +170,44 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
 
+//BARRA DE PESQUISA
 
+const searchInput = document.getElementById('search');
+
+const itemsContainer = document.querySelector('.items');
+
+const items = document.querySelectorAll('.items .item-pesquisar');
+
+const noResults = document.getElementById('no_results');
+
+
+searchInput.addEventListener('input', (event) => {
+
+  const value = formatString(event.target.value);
+
+  let hasResults = false;
+
+  items.forEach(item => {
+    if (formatString(item.textContent).includes(value)) {
+      item.style.display = 'flex';
+
+      hasResults = true;
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  noResults.style.display = hasResults ? 'none' : 'block';
+});
+
+searchInput.addEventListener('focus', () => {
+  itemsContainer.style.display = 'flex';
+});
+
+function formatString(value) {
+  return value
+    .toLowerCase()
+    .trim()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
