@@ -370,6 +370,8 @@ a:hover {
 
 
 
+
+
 /* Sidebar carrinho */
 
 
@@ -657,105 +659,12 @@ textarea:focus {
 
 
 
-
-
-
-/* meu */
-
-
-.grupo {
-    margin-bottom: 15px;
-    text-align: center;
-    
-    
-    
-}
-
-.grupo span {
-    margin-top: 10px;
-    display: flex;
-   
-}
-
-
-
-.cadastro{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-    
-}
-
-
-.input-field {
-    width: 100%;
-    border: none;
-    background-color: transparent;
-}
-
-.input-field:focus {
-    outline: none;
-}
-    
-
- .input-register{
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-    border: 2px solid #404040; 
-    padding: 8px 16px 8px 8px;
-    border-radius: 10px;
-    gap: 8px;
-    width: 310px;
-    height: 35px;
-    transition: all 0.3s ease;
-   
-    
-}
-
-
-
-
-.input-register:is(:hover, :focus) {
-    cursor: text; 
-    border: 2px solid var(--rosa);
-    
-}
-
-
-.enviar-btn{
-  background-color: var(--rosa); 
-  color: white; 
-  padding: 10px 20px;
-  border: none; 
-  border-radius: 5px; 
-  font-size: 16px; 
-  cursor: pointer; 
-  margin-bottom: 30px;
-  transition: background-color 0.3s ease;
-}
-  
-
-
-.enviar-btn:hover {
-  background-color: var(--rosa2);
-}
-
-
-.enviar-btn:active {
-  background-color:rgb(160, 129, 129);
- 
-}
-
-
-
 .esqueci-senha {
     padding-bottom: 25px;
     color: var(--amarelo);
     margin-top: 30px;
     text-align: center;
+    justify-content: center;
   
 }
 
@@ -783,6 +692,108 @@ textarea:focus {
 .cadastre_se:is(:hover, :focus) {
     color: var(--rosa);
  }
+
+
+
+
+ /* Sidebar Cadastro */
+
+
+ .cadastrarSidebar{
+  position: fixed;
+  top: 0;
+  right: -450px;
+  width: 450px;
+  height: 100%;
+  background-color: #F3F1F1;
+  z-index: 2000;
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 20px 0px 0px 20px;
+  transition: right 0.3s ease;
+  justify-content: center;      
+  align-items: center; 
+  overflow-y: auto;
+ }
+
+.cadastrarSidebar.active {
+  right: 0;
+}
+
+
+.cadastrarSidebar h2 {
+    font-size: 4rem;
+    color: var(--rosa);
+    font-family: var(--ff-Josefin_Sans);
+    margin-top: 70px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+
+
+  .cadastrarSidebar .close-btn{
+    margin-top: 20px;
+    margin-left: 5px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all ease 0.1s;
+  }
+
+
+  .cadastro-container {
+    
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+  }
+
+
+  .cadastro-container label {
+    display: block;
+    margin-top: 15px;
+  }
+
+
+  .cadastro-container input {
+    width: 100%;
+    padding: 2px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 2px solid #404040; 
+    border-radius: 20px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+  }
+
+
+  .cadastro-container input:is(:hover, :focus) {
+      border: 2px solid var(--rosa);
+      
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+  }
+
+  .cadastro-container button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--rosa);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out 0ms;
+    }
+  
+  
+
 
 
 

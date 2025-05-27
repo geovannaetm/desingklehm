@@ -87,7 +87,7 @@
     </header>
 
 
-    <!--MENU-->
+    <!---- MENU --->
 
      <div class="menu" id="sidebar">
 
@@ -127,7 +127,7 @@
 
         </div>
 
-     <!--carrinho-->
+     <!--- carrinho ---->
 
        <div class="cartcarrinho" id="cartSidebar">
         <div class="start-carrinho">
@@ -159,7 +159,7 @@
 
 
 
-    <!-- Login sidebar -->
+    <!---- Login sidebar ---->
 
         <div class="login" id="loginSidebar">
 
@@ -194,12 +194,38 @@
 
                 
 
-                <p class="cadastrar">Não tem uma conta? <a href="cadastreconta.html" class="cadastre_se">Cadastre-se</a></p>
-
-                
+                <p class="cadastrar">Não tem uma conta? <a href="#" class="cadastre_se" id="cadastrarToggle">Cadastre-se</a></p>
 
 
         </div>
+
+
+        <!---- Cadastro sidebar ---->
+
+
+        <div class="cadastrarSidebar" id="cadastrarSidebar">
+
+            <button class="close-btn" id="closeCastrar">X</button>
+            <h2>Cadastre-se</h2>
+
+            <div class="cadastro-container">
+                
+                <form id="register">
+                  <input type="text" id="register-name" placeholder="Nome Completo" required>
+                  <input type="email" id="register-email" placeholder="E-mail" required>
+                  <input type="password" id="register-password" placeholder="Senha" required>
+                  <button type="submit" id="registerButton">Cadastrar</button>
+                 
+                </form>
+              </div>
+            
+              <p class="toggle-form">Já tem conta? <a href="#" id="loginToggle">Faça login</a></p>
+
+        </div>
+
+
+
+
 
 
 

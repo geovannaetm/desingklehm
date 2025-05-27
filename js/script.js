@@ -1,3 +1,5 @@
+///////////////////// SIDEBAR DO MENU /////////////////////
+
 document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.getElementById('menuToggle');
   const sidebar = document.getElementById('sidebar');
@@ -22,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
+///////////////////// SIDEBAR DO CARRINHO /////////////////////
 
 document.addEventListener('DOMContentLoaded', function () {
   const cartToggle = document.getElementById('cartToggle');
@@ -49,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
+///////////////////// SIDEBAR DO login /////////////////////
 
 document.addEventListener('DOMContentLoaded', function () {
   const loginToggle = document.getElementById('loginToggle');
@@ -74,24 +76,53 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+///////////////////// SIDEBAR DO CADASTRO /////////////////////
+
+document.addEventListener('DOMContentLoaded', function () {
+  const cadastrarToggle = document.getElementById('cadastrarToggle');
+  const cadastrarSidebar = document.getElementById('cadastrarSidebar');
+  const closeCastrar = document.getElementById('closeCastrar');
+
+  // Abrir o sidebar
+  cadastrarToggle.addEventListener('click', function () {
+    cadastrarSidebar.classList.add('active');
+  });
+
+  // Fechar o sidebar ao clicar no botão de fechar
+  closeCastrar.addEventListener('click', function () {
+    cadastrarSidebar.classList.remove('active');
+  });
+
+  // Fechar o sidebar ao clicar fora dele
+  document.addEventListener('click', function (e) {
+    if (!cadastrarSidebar.contains(e.target) && !cadastrarToggle.contains(e.target)) {
+      cadastrarSidebar.classList.remove('active');
+    }
+  });
+});
+
+
+
+
+
 
 //campo login 
 
 
 document.getElementById('loginForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Impede o envio do formulário
+  event.preventDefault(); 
 
   const email = document.getElementById('email').value;
   const senha = document.getElementById('senha').value;
   const mensagem = document.getElementById('mensagem');
 
-  // Validação simples
+  // Validação
   if (email === 'designsklehm@exemplo.com' && senha === 'senha123') {
     mensagem.style.color = 'green';
     mensagem.style.textAlign = 'center';
     mensagem.textContent = 'Login bem-sucedido!';
     mensagem.style.marginTop = '20px';
-    // Redirecionar ou realizar outras ações aqui
+    
   } else {
     mensagem.style.color = 'red';
     mensagem.style.textAlign = 'center';
@@ -104,9 +135,26 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
 
 
+document.getElementById('register').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const name = document.getElementById('register-name').value;
+  const email = document.getElementById('register-email').value;
+  const password = document.getElementById('register-password').value;
+  if (name && email && password) {
+    registerButton.textContent = 'Cadastro realizado!';
+    registerButton.disabled = true;
+    setTimeout(() => {
+      registerButton.textContent = 'Cadastrar';
+      registerButton.disabled = false;
+    }, 3000);
+  } else {
+    alert('Por favor, preencha todos os campos.');
+  }
+});
 
 
-//CARROSEL
+
+//////////    CARROSEL  //////////
 
 new Swiper('.card-wrapper', {
   loop: true,
@@ -147,7 +195,7 @@ new Swiper('.card-wrapper', {
 });
 
 
-//FUNCIONALIDADE CARINHO
+//////   FUNCIONALIDADE CARINHO  /////
 document.addEventListener('DOMContentLoaded', () => {
     const cartItem = document.querySelector('.cart-item');
     const finalizeBtn = document.querySelector('.finalize-btn');
@@ -201,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
 
-//BARRA DE PESQUISA
+/////////  BARRA DE PESQUISA  //////////
 
 const searchInput = document.getElementById('search');
 
