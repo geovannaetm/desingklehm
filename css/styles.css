@@ -751,23 +751,20 @@ textarea:focus {
   
   }
 
-
-  .cadastro-container label {
-    display: block;
-    margin-top: 15px;
-  }
-
-
   .cadastro-container input {
-    width: 100%;
-    padding: 2px;
+    width: 300px;
+    padding: 5px;
     margin-top: 5px;
     box-sizing: border-box;
     border: 2px solid #404040; 
     border-radius: 20px;
     background-color: transparent;
     transition: all 0.3s ease;
+    margin-top: 15px;
+    
+  
   }
+
 
 
   .cadastro-container input:is(:hover, :focus) {
