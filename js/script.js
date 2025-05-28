@@ -135,21 +135,55 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
 
 
-document.getElementById('register').addEventListener('submit', function(event) {
+document.getElementById('register').addEventListener('submit', async function(event) {
   event.preventDefault();
-  const name = document.getElementById('register-name').value;
-  const email = document.getElementById('register-email').value;
-  const password = document.getElementById('register-password').value;
-  if (name && email && password) {
-    registerButton.textContent = 'Cadastro realizado!';
-    registerButton.disabled = true;
-    setTimeout(() => {
-      registerButton.textContent = 'Cadastrar';
-      registerButton.disabled = false;
-    }, 3000);
-  } else {
-    alert('Por favor, preencha todos os campos.');
-  }
+  // const name = document.getElementById('register-name').value;
+  // const email = document.getElementById('register-email').value;
+  // const password = document.getElementById('register-password').value;
+  // if (name && email && password) {
+  //   registerButton.textContent = 'Cadastro realizado!';
+  //   registerButton.disabled = true;
+  //   setTimeout(() => {
+  //     registerButton.textContent = 'Cadastrar';
+  //     registerButton.disabled = false;
+  //   }, 3000);
+  // } else {
+  //   alert('Por favor, preencha todos os campos.');
+  // }
+
+    event.preventDefault(); // Impede o envio padrão do formulário
+
+    const nome = document.getElementById('register-name').value.trim();
+    const email = document.getElementById('register-email').value.trim();
+    const senha = document.getElementById('register-password').value;
+
+    const payload = {
+      nome,
+      email,
+      senha
+    };
+
+    try {
+      const response = await fetch('http://localhost:4000/usuario', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
+        alert('Cadastro realizado com sucesso!');
+        document.getElementById('register').reset(); // Limpa o formulário
+      } else {
+        const errorData = await response.json();
+        alert('Erro ao cadastrar: ' + (errorData.message || response.statusText));
+      }
+    } catch (error) {
+      alert('Erro ao conectar com o servidor: ' + error.message);
+    }
+
+
 });
 
 
