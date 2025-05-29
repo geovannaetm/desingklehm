@@ -616,6 +616,8 @@ a:hover {
   border-radius: 20px;
   background-color: transparent;
   transition: all 0.3s ease;
+  color: #9e7202;
+  caret-color: #94555f;
 }
 
 
@@ -680,6 +682,7 @@ textarea:focus {
 
 .cadastrar {
     margin-top: 20px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
@@ -752,18 +755,30 @@ textarea:focus {
   }
 
   .cadastro-container input {
-    width: 300px;
-    padding: 5px;
+    width: 320px;
+    height: 40px;
+    padding: 10px;
     margin-top: 5px;
+    margin-bottom: 10px;
     box-sizing: border-box;
     border: 2px solid #404040; 
     border-radius: 20px;
     background-color: transparent;
     transition: all 0.3s ease;
-    margin-top: 15px;
+    color: #9e7202;
+    caret-color: #94555f;
+    
     
   
   }
+
+
+  .cadastro-container input::placeholder {
+    letter-spacing: 0.1em; 
+    color: #1E1E1E;
+    font-family: var(--ff-inter);
+   
+ } 
 
 
 
@@ -790,6 +805,28 @@ textarea:focus {
     }
   
   
+
+    .cadastro-container button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--rosa);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out 0ms;
+    }
+  
+  .cadastro-container button:hover {
+    box-shadow: 0px 0px 20px -18px;
+    box-shadow: 0 0 10px rgba(179, 120, 120, 0.6);
+  }
+  
+  .cadastro-container button:active {
+    transform: scale(0.95);
+  }
+
 
 
 
@@ -843,6 +880,7 @@ textarea:focus {
     width: 100%;
     border: none;
     background-color: transparent;
+    caret-color: var(--amarelo);
 }
 
 
@@ -861,16 +899,34 @@ input::placeholder {
   flex-direction: column;
   gap: 10px;
   margin-top: 10px;
+  margin-left: 10px;
   background-color: #F3F1F1;
   border-radius: 24px;
   padding: 15px;
   width: 50%;
   /*max-height: 100px;*/
-  overflow-y: auto;
+  
 }
 
-.item-title{
-  letter-spacing: 0.1rem;
+.item-title {
+  letter-spacing: 0.2rem;
+  color: #1E1E1E;
+  background: none;
+  transition: transform 0.5s ease;
+    
+}
+
+.item-title:hover {
+  transform: translateX(1em);
+}
+
+
+.item-content hr{
+  display: block;
+  width: 900px;
+  height: 1px;
+  
+  
 }
 
 
@@ -1366,6 +1422,62 @@ input::placeholder {
     margin-bottom: 20px;
 }
 
+.subcadastro {
+  padding: auto;
+  border-radius: 8px;
+  box-shadow: none;
+  margin-top: auto;
+    
+  
+}
+
+
+.subcadastro input{
+   border: none;
+   background-color: var(--rosa);
+   width: 400px;
+   height: 40px;
+   border-radius: 12px;
+   padding: 10px 16px 10px 10px;
+   margin-bottom: 20px;
+   color: white;
+   transition: all 0.3s ease;
+}
+
+.subcadastro inputinput:focus {
+  outline: none;
+}
+
+.subcadastro input::placeholder {
+    letter-spacing: 0.1em; 
+    color: #fff;
+    font-family: var(--ff-inter);
+}
+
+
+.subcadastro button{
+    margin-top: 10px;
+    letter-spacing: 0.1em; 
+    display: block;  
+    font-family: var(--ff-inter);
+    margin: 0 auto; 
+    padding: 15px 50px;
+    background-color: var(--amarelo);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    transition: all 0.2s ease-in-out 0ms;
+}
+
+  .subcadastro button:hover {
+    background-color: #ad7d03;
+  }
+
+
+  .subcadastro button:active {
+    background-color: #9e7202;
+   
+  }
 
 .cadastro{
     display: flex;
@@ -1406,8 +1518,9 @@ input::placeholder {
     color: white;
     border: none;
     border-radius: 15px;
-    transition: background-color 0.3s ease;
+    transition: all 0.2s ease-in-out 0ms;
 }
+
 
 
 .cadastro-buttons button:hover {

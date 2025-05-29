@@ -157,79 +157,29 @@
 
 
 
+    <!---- Login sidebar ---->
 
-    <!-- Login sobreposto -->
         <div class="login" id="loginSidebar">
 
             <button class="close-btn" id="closeLogin">X</button>
             <h2>Login</h2>
 
-            <div class="grupo-btnsocial">
-                
-                <button class="btn-social email">
-                    <a href="index.html#cadastro">
-                    <span> Receber Código de Acesso por E-mail</span>
-                    </a>
-                </button>
-            
+
+            <div class="login-container">
+
+                <form id="loginForm">
+                <label for="email">Digite seu E-mail:</label>
+                <input type="email" id="email" required />
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" required />
+
+                <button type="submit">Entrar</button>
+                </form>
+                <p id="mensagem"></p>
+
             </div>
             
-
-            <div class="">
-                <div class="grupo">
-
-                    
-                    <span >Entre com seu E-mail:</span>
-
-                    
-
-                  <!--email-->
-
-            <div id="cadastro" class="cadastro">
-        
-                <div class="input-register">
-        
-                    <input 
-                        id="register" 
-                        type="text" 
-                        class="input-field" 
-                        placeholder=""
-                    >
-                </div>
-        
-            </div>  
-
-        
-            </div>
-
-
-            <!------------------------------>
-
-            <div class="grupo">
-
-                    <span >Senha:</span>
-                   
-
-                    <!--senha-->
-
-        <div id="cadastro" class="cadastro">
-        
-            <div class="input-register">
-    
-                <input 
-                    id="register" 
-                    type="text" 
-                    class="input-field" 
-                    placeholder=""
-                >
-            </div>
-    
-        </div>  
-
-        <button class="enviar-btn">Enviar</button>
-
-        </div>
-
 
 
                 <div class="esqueci-senha">
@@ -240,11 +190,54 @@
                 <hr>
                 
 
-                <p class="cadastrar">Não tem uma conta? <a href="cadastreconta.html" class="cadastre-se">Cadastre-se</a></p>
+                
 
-            </div>
+                <p class="cadastrar">Não tem uma conta? <a href="#" class="cadastre_se" id="cadastrarToggle">Cadastre-se</a></p>
 
 
+        </div>
+
+
+        <!---- Cadastro sidebar ---->
+
+
+        <div class="cadastrarSidebar" id="cadastrarSidebar">
+
+            <button class="close-btn" id="closeCastrar">X</button>
+            <h2>Cadastre-se</h2>
+
+           <p class="cadastrar">Bem vindo!</p>
+
+           <hr>
+
+            <div class="cadastro-container">
+
+                
+                
+                <form id="register">
+
+                  <label for="text">Digite seu Nome:</label>
+                  <input type="text" id="register-name" placeholder="" required>
+                  
+                  <label for="email">Digite seu E-mail:</label>
+                  <input type="email" id="register-email" placeholder="" required>
+
+                <label for="password">Senha:</label>
+                  <input type="password" id="register-password" placeholder="" required>
+
+
+                  <button type="submit" id="registerButton">Cadastrar</button>
+                 
+                </form>
+
+                
+              </div>
+
+              
+
+             
+            
+              
         </div>
                     
 

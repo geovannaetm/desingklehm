@@ -25,58 +25,221 @@
     <header class="header">
 
 
-        <nav class="navbar">
-            <ul class="navbar-header">
-                <li>
-                    <button class="nav-toggle-btn">
-                        <a href="menu.html">
-                            <ion-icon name="menu-outline"></ion-icon>
-                        </a>
-                    </button>
-                </li>
-    
-                <li>
-                    <a href="index.html" class="navbar-link" >HOME</a>
-                </li>
-    
-                <li>
-                    <a href="#joias" class="navbar-link" >JÓIAS</a>
-                </li>
-    
-    
-                <li class="logo">
-                    <img src="img/logo.jpg" alt="Logo" class="logo">
-                </li>
-    
-                <li>
-                    <a href="cuidados.html" class="navbar-link" >CUIDADOS</a>
-                </li>
-    
-                <li>
-                    <a href="#contatos" class="navbar-link" >CONTATOS</a>
-                </li>
-    
-                <div class="">
-                    <ul class="navbar-header navbar-item">
-                        <li>
-                            <a href="carrinho.html" class="" ><ion-icon name="bag-handle-outline"></ion-icon></a>
-                        </li>
-    
-                        <li>
-                            <a href="login.html" class="" ><ion-icon name="person-outline"></ion-icon></a>
-                        </li>
-    
-    
-                    </ul>
-    
+    <nav class="navbar">
+        <ul class="navbar-header">
+            
+            <li class="dropdown-item">
+                <button class="nav-toggle-btn " id="menuToggle">
+                    
+                        <ion-icon name="menu-outline"></ion-icon>
+                   
+                </button>
+
+                <!-- Login sobreposto -->
+       
+
+            </li>
+
+            <li>
+                <a href="index.html" class="navbar-link" >HOME</a>
+            </li>
+
+            <li>
+                <a href="#banner" class="navbar-link" >JÓIAS</a>
+            </li>
+
+
+            <li class="logo">
+                <img src="img/logo.jpg" alt="Logo" class="logo">
+            </li>
+
+            <li>
+                <a href="cuidados.html" class="navbar-link" >CUIDADOS</a>
+            </li>
+
+            <li>
+                <a href="#contatos" class="navbar-link" >CONTATOS</a>
+            </li>
+
+            <div class="">
+                <ul class="navbar-header navbar-item">
+                    <li id="cartToggle">
+                        
+                       <ion-icon name="bag-handle-outline"></ion-icon>
+                    </li>
+
+                    <li id="loginToggle">
+                        
+                       <ion-icon name="person-outline"></ion-icon>
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </ul>
+
+
+    </nav>
+
+    </header>
+
+
+    <!---- MENU --->
+
+     <div class="menu" id="sidebar">
+
+            <div class="start-menu">
+                <h2>SUAS PREFERÊNCIAS</h2>
+               
+                <button class="close-btn" id="closeSidebar">X</button>
+               
+            </div>
+
+            <hr>
+
+
+            <div class="menu_options">
+                <ul>
+                    <li><a href="solitarias.html">Solitárias</a></li>
+                    <li><a href="pagexterna.html">Colares</a></li>
+                    <li><a href="Piercings.html">Piercings</a></li>
+                    <li><a href="aliancas.html">Alianças</a></li>
+                    <li><a href="Pulseiras.html">Pulseiras</a></li>
+                    <li><a href="Braceletes.html">Braceletes</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="sub_options">
+
+                <h3><a href="colecaodeverao.html"> Coleção de verão </a> </h3>    
+                <h3><a href="cuidados.html">Cuidados das Jóias </a> </h3>
+                <h3><a href="index.html#contatos"> Contato </a> </h3>
+
+            </div>
+
+            
+
+
+        </div>
+
+     <!--- carrinho ---->
+
+       <div class="cartcarrinho" id="cartSidebar">
+        <div class="start-carrinho">
+          <h2>CARRINHO</h2>
+          <button class="close-btn" id="closeCart">X</button>
+        </div>
+        <hr>
+        <div class="cart-item">
+          <img src="img/bracelete-carrinho.png" alt="Bracelete Aro Ondulado" class="product-image">
+          <div class="product-details">
+            <h3>Bracelete Aro Ondulado Ouro</h3>
+            <p>Ouro</p>
+            <h3>R$ 230,00</h3>
+            <div class="quantity-controls">
+              <button><img src="img/icons8-lixeira-25.png" alt="Remover"></button>
+              <span>1</span>
+              <button><img src="img/icons8-add-25.png" alt="Adicionar"></button>
+            </div>
+          </div>
+        </div>
+        <hr class="hr-carrinho">
+        <div class="subtotal">
+          <p>Subtotal</p>
+          <h3>R$ 230,00</h3>
+        </div>
+        <button class="finalize-btn"><span>Finalizar</span></button>
+      </div>
+
+
+
+
+    <!---- Login sidebar ---->
+
+        <div class="login" id="loginSidebar">
+
+            <button class="close-btn" id="closeLogin">X</button>
+            <h2>Login</h2>
+
+
+            <div class="login-container">
+
+                <form id="loginForm">
+                <label for="email">Digite seu E-mail:</label>
+                <input type="email" id="email" required />
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" required />
+
+                <button type="submit">Entrar</button>
+                </form>
+                <p id="mensagem"></p>
+
+            </div>
+            
+
+
+                <div class="esqueci-senha">
+                <a href="index.html#cadastro" class="esqueci-senha"><span>Esqueci minha senha</span></a>
                 </div>
-    
-            </ul>
-    
-    
-        </nav>
-    
-        </header>
+
+
+                <hr>
+                
+
+                
+
+                <p class="cadastrar">Não tem uma conta? <a href="#" class="cadastre_se" id="cadastrarToggle">Cadastre-se</a></p>
+
+
+        </div>
+
+
+        <!---- Cadastro sidebar ---->
+
+
+        <div class="cadastrarSidebar" id="cadastrarSidebar">
+
+            <button class="close-btn" id="closeCastrar">X</button>
+            <h2>Cadastre-se</h2>
+
+           <p class="cadastrar">Bem vindo!</p>
+
+           <hr>
+
+            <div class="cadastro-container">
+
+                
+                
+                <form id="register">
+
+                  <label for="text">Digite seu Nome:</label>
+                  <input type="text" id="register-name" placeholder="" required>
+                  
+                  <label for="email">Digite seu E-mail:</label>
+                  <input type="email" id="register-email" placeholder="" required>
+
+                <label for="password">Senha:</label>
+                  <input type="password" id="register-password" placeholder="" required>
+
+
+                  <button type="submit" id="registerButton">Cadastrar</button>
+                 
+                </form>
+
+                
+              </div>
+
+              
+
+             
+            
+              
+        </div>
     
     
 
@@ -300,7 +463,7 @@
 
 
 
-
+    <script src="js/script.js"></script>
 
 
 
