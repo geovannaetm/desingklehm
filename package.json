@@ -27,7 +27,9 @@
     "sucrase": "^3.35.0"
   },
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.8",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "tailwindcss": "^4.1.8"
   }
 }
