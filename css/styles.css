@@ -1176,7 +1176,7 @@ input::placeholder {
 
 
 /*-------------------------*\
- DESTAQUES TESTE
+        DESTAQUES
 \*-------------------------*/
 
 
@@ -1310,78 +1310,6 @@ input::placeholder {
 
 
 
-/*-------------------------*\
- DESTAQUES
-\*-------------------------*/
-
-
-.container-destaque {
-    
-    margin: 20px;
-    margin-top: 120px;
-    display: flex;
-    flex-direction: column;
-   
-  }
-  
-  
-  
-  
- 
-  .produtos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px; 
-    flex-wrap: wrap; 
-    width: 100%;
-    margin-top: 20px;
-  }
-  
-  .produto {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 300px;
-    width: 250px;
-    margin: 0 60px; 
-  }
-  
-  .produto img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-  }
-  
-  .produto p {
-    margin: 5px 0;
-    font-size: 1.3rem;
-  }
-  
-  
-  
-  .btn-carrosel {
-    background-color: transparent;
-    width: 50px; 
-    height: 50px; 
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out 0ms;
-    margin: 0 15px; 
-  }
-  
-  .btn-carrosel :hover {
-    box-shadow: 0px 0px 20px -18px;
-  }
-  
-  .btn-carrosel :active {
-    transform: scale(0.95);
-  }
 
 /*-------------------------*\
  CADASTRO
@@ -1960,9 +1888,12 @@ COLEÇÃO DE VERAO
 
 
 .cadastro-buttons h2{
-    margin-left: 0px;
-    font-size: 3.5rem;
-    
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 3.8rem;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
    
 }
 
