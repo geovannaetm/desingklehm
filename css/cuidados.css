@@ -1,7 +1,7 @@
 /*-------------------------*\
  propriedades customizadas
 \*-------------------------*/
-
+@import "tailwindcss";
 :root {
 
     --rosa: #B18F8F;
@@ -964,7 +964,7 @@ input::placeholder {
 
 .titulo {
     text-align: center;
-    color: #C08A01;
+    
     font-family: var(--ff-Josefin_Sans);
     letter-spacing: 0.4rem;
     padding: 40px;
