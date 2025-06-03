@@ -963,12 +963,6 @@ input::placeholder {
 
 
 
-.imagem1 {
-
-    align-items: center;
-    margin: auto;
-
-}
 
 
 .products {
@@ -977,23 +971,12 @@ input::placeholder {
   
     padding: 80px;
 
-
-
 }
 
-
 .product-card {
-    
-    
-   
-   
-   
-   
+  
   
     justify-content: space-between;
-
-
-
 
 }
 
