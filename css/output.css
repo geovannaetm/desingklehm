@@ -184,6 +184,9 @@
   .flex {
     display: flex;
   }
+  .hidden {
+    display: none;
+  }
   .bg-amber-500 {
     background-color: var(--color-amber-500);
   }

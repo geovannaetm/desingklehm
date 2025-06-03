@@ -109,12 +109,11 @@ document.addEventListener('DOMContentLoaded', function () {
 //campo login 
 
 
-document.getElementById('loginForm').addEventListener('submit', async function (event) {
-  event.preventDefault();
+document.getElementById('loginForm').addEventListener('submit', async function (e) {
+  e.preventDefault();
 
-  const email = document.getElementById('login-email').value.trim();
-  const senha = document.getElementById('login-senha').value.trim();
-  const mensagem = document.getElementById('login-message');
+  const email = document.getElementById('login-email').value;
+  const senha = document.getElementById('login-senha').value;
 
   try {
     const response = await fetch('http://localhost:4000/usuario/login', {
@@ -125,22 +124,19 @@ document.getElementById('loginForm').addEventListener('submit', async function (
       body: JSON.stringify({ email, senha }),
     });
 
+    const data = await response.json();
+
     if (response.ok) {
-      mensagem.textContent = 'Login bem-sucedido!';
-      mensagem.className = 'success';
+      alert(`Bem-vindo , ${data.nome}!`);
     } else {
-      const errorData = await response.json();
-      mensagem.textContent = errorData.error || 'Erro ao fazer login';
-      mensagem.className = 'error';
+      alert(data.error || 'Erro desconhecido');
     }
   } catch (error) {
-    mensagem.textContent = 'Erro ao conectar com o servidor';
-    mensagem.className = 'error';
+    console.error('Erro ao fazer login:', error);
+    alert('Erro ao fazer login. Tente novamente.');
   }
-
-  // Exibe a mensagem
-  mensagem.classList.remove('hidden');
 });
+
 
 
 
@@ -151,8 +147,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
 document.getElementById('register').addEventListener('submit', async function(event) {
   event.preventDefault();
   
-    event.preventDefault(); // Impede o envio padrão do formulário
-
+  
     const nome = document.getElementById('register-name').value.trim();
     const email = document.getElementById('register-email').value.trim();
     const senha = document.getElementById('register-password').value;
