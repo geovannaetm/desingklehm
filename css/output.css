@@ -7,9 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-amber-500: oklch(76.9% 0.188 70.08);
-    --color-amber-900: oklch(41.4% 0.112 45.904);
     --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -185,20 +183,11 @@
       max-width: 96rem;
     }
   }
-  .m-auto {
-    margin: auto;
-  }
   .mx-auto {
     margin-inline: auto;
   }
-  .mt-80 {
-    margin-top: calc(var(--spacing) * 80);
-  }
-  .mr-auto {
-    margin-right: auto;
-  }
-  .ml-auto {
-    margin-left: auto;
+  .mt-\[80px\] {
+    margin-top: 80px;
   }
   .block {
     display: block;
@@ -218,6 +207,9 @@
   .w-full {
     width: 100%;
   }
+  .max-w-\[300px\] {
+    max-width: 300px;
+  }
   .border-collapse {
     border-collapse: collapse;
   }
@@ -226,9 +218,6 @@
   }
   .resize {
     resize: both;
-  }
-  .items-center {
-    align-items: center;
   }
   .justify-between {
     justify-content: space-between;
@@ -239,8 +228,17 @@
   .gap-50 {
     gap: calc(var(--spacing) * 50);
   }
+  .gap-\[50\] {
+    gap: 50;
+  }
+  .gap-\[50px\] {
+    gap: 50px;
+  }
   .rounded-\[10\] {
     border-radius: 10;
+  }
+  .rounded-\[10px\] {
+    border-radius: 10px;
   }
   .border {
     border-style: var(--tw-border-style);
@@ -251,15 +249,6 @@
   }
   .bg-white {
     background-color: var(--color-white);
-  }
-  .p-0 {
-    padding: calc(var(--spacing) * 0);
-  }
-  .p-3 {
-    padding: calc(var(--spacing) * 3);
-  }
-  .p-10 {
-    padding: calc(var(--spacing) * 10);
   }
   .p-20 {
     padding: calc(var(--spacing) * 20);
@@ -273,32 +262,29 @@
   .p-40 {
     padding: calc(var(--spacing) * 40);
   }
-  .p-50 {
-    padding: calc(var(--spacing) * 50);
-  }
-  .p-60 {
-    padding: calc(var(--spacing) * 60);
-  }
   .p-80 {
     padding: calc(var(--spacing) * 80);
   }
-  .p-180 {
-    padding: calc(var(--spacing) * 180);
+  .p-\[30\] {
+    padding: 30;
   }
-  .p-\[40\] {
-    padding: 40;
+  .p-\[35\] {
+    padding: 35;
   }
-  .p-\[\<value\>\] {
-    padding: <value>;
+  .p-\[35px\] {
+    padding: 35px;
   }
-  .px-20 {
-    padding-inline: calc(var(--spacing) * 20);
-  }
-  .py-20 {
-    padding-block: calc(var(--spacing) * 20);
+  .p-\[80px\] {
+    padding: 80px;
   }
   .text-center {
     text-align: center;
+  }
+  .text-\[15px\] {
+    font-size: 15px;
+  }
+  .text-\[25px\] {
+    font-size: 25px;
   }
   .font-\[600\] {
     --tw-font-weight: 600;
@@ -314,6 +300,15 @@
   }
   .text-\[\#B18F8F\] {
     color: #B18F8F;
+  }
+  .text-\[\#C08A01\] {
+    color: #C08A01;
+  }
+  .text-\[25\] {
+    color: 25;
+  }
+  .text-\[\<value\>\] {
+    color: <value>;
   }
   .text-gray-800 {
     color: var(--color-gray-800);
@@ -337,9 +332,10 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
-  .ease-\[\<value\>\] {
-    --tw-ease: <value>;
-    transition-timing-function: <value>;
+  .transition-transform {
+    transition-property: transform, translate, scale, rotate;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .ease-in-out {
     --tw-ease: var(--ease-in-out);
