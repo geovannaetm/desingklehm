@@ -11,6 +11,10 @@
     --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-white: #fff;
     --spacing: 0.25rem;
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
     --font-weight-bold: 700;
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --default-transition-duration: 150ms;
@@ -186,8 +190,8 @@
   .mx-auto {
     margin-inline: auto;
   }
-  .mt-\[80px\] {
-    margin-top: 80px;
+  .my-8 {
+    margin-block: calc(var(--spacing) * 8);
   }
   .block {
     display: block;
@@ -198,6 +202,9 @@
   .hidden {
     display: none;
   }
+  .inline-block {
+    display: inline-block;
+  }
   .table {
     display: table;
   }
@@ -207,8 +214,8 @@
   .w-full {
     width: 100%;
   }
-  .max-w-\[300px\] {
-    max-width: 300px;
+  .max-w-\[800px\] {
+    max-width: 800px;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -219,23 +226,17 @@
   .resize {
     resize: both;
   }
+  .items-center {
+    align-items: center;
+  }
   .justify-between {
     justify-content: space-between;
   }
   .justify-center {
     justify-content: center;
   }
-  .gap-50 {
-    gap: calc(var(--spacing) * 50);
-  }
-  .gap-\[50\] {
-    gap: 50;
-  }
   .gap-\[50px\] {
     gap: 50px;
-  }
-  .rounded-\[10\] {
-    border-radius: 10;
   }
   .rounded-\[10px\] {
     border-radius: 10px;
@@ -262,12 +263,6 @@
   .p-40 {
     padding: calc(var(--spacing) * 40);
   }
-  .p-80 {
-    padding: calc(var(--spacing) * 80);
-  }
-  .p-\[30\] {
-    padding: 30;
-  }
   .p-\[35\] {
     padding: 35;
   }
@@ -280,8 +275,19 @@
   .text-center {
     text-align: center;
   }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
   .text-\[15px\] {
     font-size: 15px;
+  }
+  .text-\[20px\] {
+    font-size: 20px;
   }
   .text-\[25px\] {
     font-size: 25px;
@@ -303,12 +309,6 @@
   }
   .text-\[\#C08A01\] {
     color: #C08A01;
-  }
-  .text-\[25\] {
-    color: 25;
-  }
-  .text-\[\<value\>\] {
-    color: <value>;
   }
   .text-gray-800 {
     color: var(--color-gray-800);
@@ -340,6 +340,33 @@
   .ease-in-out {
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
+  }
+  .hover\:scale-105 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-scale-x: 105%;
+        --tw-scale-y: 105%;
+        --tw-scale-z: 105%;
+        scale: var(--tw-scale-x) var(--tw-scale-y);
+      }
+    }
+  }
+  .hover\:transition-transform {
+    &:hover {
+      @media (hover: hover) {
+        transition-property: transform, translate, scale, rotate;
+        transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+        transition-duration: var(--tw-duration, var(--default-transition-duration));
+      }
+    }
+  }
+  .hover\:duration-400 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-duration: 400ms;
+        transition-duration: 400ms;
+      }
+    }
   }
 }
 @property --tw-rotate-x {
@@ -445,6 +472,25 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -471,6 +517,10 @@
       --tw-ring-offset-shadow: 0 0 #0000;
       --tw-outline-style: solid;
       --tw-ease: initial;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
+      --tw-duration: initial;
     }
   }
 }

@@ -957,36 +957,15 @@ input::placeholder {
 \*-------------------------*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-.product-card h2 {
-    font-size: 1.2rem;
-    margin-bottom: 05px;
-    color: #333;
-    display: grid;
-    font-size: 15px;
-    
-
+.cuidados {
+  padding: 20px;
 }
 
-
-.product-card:hover {
-
-    transform: scale(1.05);
-    transition: transform 0.4s ease-in-out;
-
+.products {
+  padding: 30px;
+  border-radius: 30px;
+  gap: 20px;
 }
-
-
 
 
 
