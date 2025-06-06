@@ -951,7 +951,6 @@ input::placeholder {
 
 
 
-
 /*-------------------------*\
  CONTEUDO
 \*-------------------------*/
@@ -965,9 +964,8 @@ input::placeholder {
   padding: 30px;
   border-radius: 30px;
   gap: 20px;
+ 
 }
-
-
 
 
 
