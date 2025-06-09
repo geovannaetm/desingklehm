@@ -114,6 +114,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
 
   const email = document.getElementById('login-email').value;
   const senha = document.getElementById('login-senha').value;
+  
 
   try {
     const response = await fetch('http://localhost:4000/usuario/login', {
