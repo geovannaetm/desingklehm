@@ -74,6 +74,9 @@
                        <ion-icon name="person-outline"></ion-icon>
                     </li>
 
+                    <li id="userToggle" style="display: none;">
+                        <ion-icon name="person-circle-outline"></ion-icon> 
+                    </li>
 
                 </ul>
 
@@ -196,6 +199,36 @@
                 <p class="cadastrar">Não tem uma conta? <a href="#" class="cadastre_se" id="cadastrarToggle">Cadastre-se</a></p>
 
 
+        </div>
+
+
+
+
+        <!-- Sidebar do Usuário -->
+        <div class="user-sidebar" id="userSidebar">
+        <button class="close-btn" id="closeUser">X</button>
+        <h2>Minha Conta</h2>
+
+
+         <div class="usuario-container">
+        <form id="updateForm">
+            <label for="novoNome">Novo Nome:</label>
+            <input type="text" id="novoNome" placeholder="Digite o novo nome">
+
+            <label for="novaSenha">Nova Senha:</label>
+            <input type="password" id="novaSenha" placeholder="Digite a nova senha">
+
+           <button type="submit">Atualizar</button>
+        </form>
+
+        
+
+            <button id="logoutBtn">
+            Sair da conta
+            </button>
+
+         </div>
+            
         </div>
 
 
