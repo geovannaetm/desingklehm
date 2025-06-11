@@ -60,17 +60,18 @@ DROP TABLE IF EXISTS `lojabd`.`carrinho` ;
 
 CREATE TABLE IF NOT EXISTS `lojabd`.`carrinho` (
   `usuario_id` INT NOT NULL,
-  `produto_id` INT NOT NULL,
+  `produto_unidade_id` INT NOT NULL,
+  `quantidade` INT NOT NULL DEFAULT 1,
   INDEX `fk_carrinho_Usuario_idx` (`usuario_id` ASC) VISIBLE,
-  INDEX `fk_carrinho_produto1_idx` (`produto_id` ASC) VISIBLE,
+  INDEX `fk_carrinho_produto1_idx` (`produto_unidade_id` ASC) VISIBLE,
   CONSTRAINT `fk_carrinho_Usuario`
     FOREIGN KEY (`usuario_id`)
     REFERENCES `lojabd`.`Usuario` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_carrinho_produto1`
-    FOREIGN KEY (`produto_id`)
-    REFERENCES `lojabd`.`produto` (`id`)
+    FOREIGN KEY (`produto_unidade_id`)
+    REFERENCES `lojabd`.`produto_unidade` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
