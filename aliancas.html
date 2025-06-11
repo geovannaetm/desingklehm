@@ -22,7 +22,7 @@
 
 <body>
 
-    <header class="header">
+     <header class="header">
 
 
     <nav class="navbar">
@@ -73,6 +73,9 @@
                        <ion-icon name="person-outline"></ion-icon>
                     </li>
 
+                    <li id="userToggle" style="display: none;">
+                        <ion-icon name="person-circle-outline"></ion-icon> 
+                    </li>
 
                 </ul>
 
@@ -167,19 +170,18 @@
 
 
             <div class="login-container">
-
                 <form id="loginForm">
-                <label for="email">Digite seu E-mail:</label>
-                <input type="email" id="email" required />
-
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" required />
-
-                <button type="submit">Entrar</button>
+                  <label for="email">Digite seu E-mail:</label>
+                  <input type="email" id="login-email" required />
+              
+                  <label for="senha">Senha:</label>
+                  <input type="password" id="login-senha" required />
+              
+                  <button type="submit">Entrar</button>
                 </form>
-                <p id="mensagem"></p>
-
-            </div>
+                <p id="login-message" class="hidden"></p>
+              </div>
+              
             
 
 
@@ -196,6 +198,39 @@
                 <p class="cadastrar">Não tem uma conta? <a href="#" class="cadastre_se" id="cadastrarToggle">Cadastre-se</a></p>
 
 
+        </div>
+
+
+
+
+        <!-- Sidebar do Usuário -->
+        <div class="user-sidebar" id="userSidebar">
+        <button class="close-btn" id="closeUser">X</button>
+        <h2>Minha Conta</h2>
+
+        
+         <div class="usuario-container">
+        <form id="updateForm">
+            <label for="novoNome">Novo Nome:</label>
+            <input type="text" id="novoNome" placeholder="Digite o novo nome">
+
+            <label for="novaSenha">Nova Senha:</label>
+            <input type="password" id="novaSenha" placeholder="Digite a nova senha">
+
+            
+
+           <button type="submit">Atualizar <ion-icon name="create-outline"></ion-icon></button>
+        </form>
+
+         </div>
+
+         <hr>
+            <button id="logoutBtn">
+            Sair da conta <ion-icon name="power-outline"></ion-icon>
+            </button>
+
+        
+            
         </div>
 
 
@@ -223,7 +258,7 @@
                   <label for="email">Digite seu E-mail:</label>
                   <input type="email" id="register-email" placeholder="" required>
 
-                <label for="password">Senha:</label>
+                  <label for="password">Senha:</label>
                   <input type="password" id="register-password" placeholder="" required>
 
 
@@ -240,6 +275,7 @@
             
               
         </div>
+
     
     
 
@@ -464,7 +500,7 @@
 
     <script src="js/funcoesExtenas.js"></script>
 
-
+    <script src="js/usuarioServer.js"></script>
 
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
