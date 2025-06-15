@@ -131,32 +131,19 @@
 
      <!--- carrinho ---->
 
-       <div class="cartcarrinho" id="cartSidebar">
-        <div class="start-carrinho">
-          <h2>CARRINHO</h2>
-          <button class="close-btn" id="closeCart">X</button>
-        </div>
-        <hr>
-        <div class="cart-item">
-          <img src="img/bracelete-carrinho.png" alt="Bracelete Aro Ondulado" class="product-image">
-          <div class="product-details">
-            <h3>Bracelete Aro Ondulado Ouro</h3>
-            <p>Ouro</p>
-            <h3>R$ 230,00</h3>
-            <div class="quantity-controls">
-              <button><img src="img/icons8-lixeira-25.png" alt="Remover"></button>
-              <span>1</span>
-              <button><img src="img/icons8-add-25.png" alt="Adicionar"></button>
-            </div>
-          </div>
-        </div>
-        <hr class="hr-carrinho">
-        <div class="subtotal">
-          <p>Subtotal</p>
-          <h3>R$ 230,00</h3>
-        </div>
-        <button class="finalize-btn"><span>Finalizar</span></button>
-      </div>
+      <div class="cartcarrinho" id="cartSidebar">
+  <!-- Cabeçalho -->
+  <div class="start-carrinho">
+    <h2>CARRINHO</h2>
+    <button class="close-btn" id="closeCart">X</button>
+  </div>
+
+  <div class="subtotal">
+    <p>Subtotal</p>
+    <h3>R$ 0.00</h3>
+  </div>
+  <button class="finalize-btn"><span>Finalizar</span></button>
+</div>
 
 
 
@@ -415,6 +402,8 @@
     </a>
 
 
+    
+
 
 
     <script src="js/funcoesExtenas.js"></script>
@@ -424,6 +413,13 @@
 
     <script src="js/usuarioServer.js"></script>
 
+    <script src="js/cart.js"></script>
+
+
+    <script>
+  // Adicione isso ANTES do seu compra.js
+  window.currentProductId = '1'; // Substitua pelo ID real do produto
+</script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     
