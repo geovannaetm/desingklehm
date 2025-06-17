@@ -150,59 +150,7 @@ new Swiper('.card-wrapper', {
 });
 
 
-//////   FUNCIONALIDADE CARINHO  /////
-document.addEventListener('DOMContentLoaded', () => {
-    const cartItem = document.querySelector('.cart-item');
-    const finalizeBtn = document.querySelector('.finalize-btn');
-    const quantitySpan = cartItem.querySelector('.quantity-controls span');
-    const addButton = cartItem.querySelector('.quantity-controls button:nth-child(3)');
-    const removeButton = cartItem.querySelector('.quantity-controls button:nth-child(1)');
-    const subtotal = document.querySelector('.subtotal h3');
-    const finalizeButton = document.querySelector('.finalize-btn');
-  
-    if (!cartItem || !quantitySpan || !addButton || !removeButton || !subtotal) {
-      console.error('Um ou mais elementos não foram encontrados.');
-      return;
-    }
-  
-    let quantity = 1;
-    const maxQuantity = 10;
-    const price = 230;
-  
-    function updateCart() {
-      quantitySpan.textContent = quantity;
-      subtotal.textContent = `R$ ${(price * quantity).toFixed(2)}`;
-  
-      if (quantity === 0) {
-        cartItem.style.display = 'none';
-        finalizeBtn.style.display = 'none';
-      } else {
-        cartItem.style.display = 'flex';
-        finalizeBtn.style.display = 'flex';
-      }
-    }
-  
-    addButton.addEventListener('click', () => {
-      if (quantity < maxQuantity) {
-        quantity++;
-        updateCart();
-      }
-    });
-  
-    removeButton.addEventListener('click', () => {
-      if (quantity > 0) {
-        quantity--;
-        updateCart();
-      }
-    });
-  
-    finalizeButton.addEventListener('click', () => {
-      alert('Compra finalizada!');
-    });
-  
-    updateCart();
-  });
-  
+
 
 /////////  BARRA DE PESQUISA  //////////
 

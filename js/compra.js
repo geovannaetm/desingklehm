@@ -25,7 +25,7 @@ addBtn?.addEventListener('click', async (e) => {
   // Verificação do usuário logado
   const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
   if (!usuario?.token) {
-    alert('Faça login para adicionar itens ao carrinho');
+    showTooltip('Faça login para adicionar itens ao carrinho' , 'error');
     document.getElementById('loginToggle')?.click();
     return;
   }
@@ -33,7 +33,7 @@ addBtn?.addEventListener('click', async (e) => {
   // Validação do tamanho selecionado
   const selectedSize = document.querySelector('input[name="ringSize"]:checked')?.value;
   if (!selectedSize) {
-    alert('Selecione um tamanho');
+    showTooltip('Selecione um tamanho' , 'error');
     return;
   }
 
@@ -88,6 +88,39 @@ addBtn?.addEventListener('click', async (e) => {
 
   } catch (error) {
     console.error('Erro:', error);
-    alert(error.message);
+    showTooltip(error.message , 'error');
   }
 });
+
+
+
+//tolltip
+function showTooltip(message, type = 'success', duration = 3000) {
+    const tooltip = document.getElementById('custom-tooltip');
+    const overlay = document.getElementById('tooltip-overlay');
+
+    tooltip.textContent = message;
+    tooltip.className = ''; 
+    tooltip.classList.add(type);
+
+   
+    overlay.classList.add('show');
+    tooltip.classList.add('show');
+
+    // Animação
+    tooltip.style.transform = 'translateX(-50%) translateY(-20px)';
+    requestAnimationFrame(() => {
+      tooltip.style.transform = 'translateX(-50%) translateY(0)';
+      tooltip.style.opacity = '1';
+    });
+
+   
+    setTimeout(() => {
+      tooltip.classList.remove('show');
+      overlay.classList.remove('show');
+      tooltip.style.transform = 'translateX(-50%) translateY(-20px)';
+      tooltip.style.opacity = '0';
+    }, duration);
+  }
+
+  

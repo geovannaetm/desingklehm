@@ -22,6 +22,14 @@
 
 <body>
 
+    <!-- TOOLTIP -->
+      <div id="tooltip-overlay"></div>
+
+     
+     <div id="custom-tooltip"></div>
+
+
+
 <header class="header">
 
 
@@ -88,6 +96,7 @@
 
     </header>
 
+    
 
     <!---- MENU --->
 
@@ -132,18 +141,18 @@
      <!--- carrinho ---->
 
       <div class="cartcarrinho" id="cartSidebar">
-  <!-- Cabeçalho -->
-  <div class="start-carrinho">
-    <h2>CARRINHO</h2>
-    <button class="close-btn" id="closeCart">X</button>
-  </div>
+    <!-- Cabeçalho -->
+      <div class="start-carrinho">
+        <h2>CARRINHO</h2>
+        <button class="close-btn" id="closeCart">X</button>
+      </div>
 
-  <div class="subtotal">
-    <p>Subtotal</p>
-    <h3>R$ 0.00</h3>
-  </div>
-  <button class="finalize-btn"><span>Finalizar</span></button>
-</div>
+      <div class="subtotal">
+      <p>Subtotal</p>
+      <h3>R$ 0.00</h3>
+      </div>
+      <button class="finalize-btn"><span>Finalizar</span></button>
+      </div>
 
 
 
@@ -187,10 +196,14 @@
 
         </div>
 
-
-
+        
 
         <!-- Sidebar do Usuário -->
+
+     
+
+
+
         <div class="user-sidebar" id="userSidebar">
         <button class="close-btn" id="closeUser">X</button>
         <h2>Minha Conta</h2>
@@ -215,6 +228,13 @@
             <button id="logoutBtn">
             Sair da conta <ion-icon name="power-outline"></ion-icon>
             </button>
+
+
+            <button id="deleteAccountBtn">
+            Excluir Conta
+            </button>
+
+
 
         
             
@@ -400,9 +420,6 @@
         <ion-icon name="chevron-up"></ion-icon>
 
     </a>
-
-
-    
 
 
 

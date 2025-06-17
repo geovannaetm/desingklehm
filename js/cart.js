@@ -81,13 +81,13 @@ async function updateCartUI() {
 
     // Evento para finalizar compra
     cartSidebar.querySelector('.finalize-btn').addEventListener('click', () => {
-      alert('Compra finalizada com sucesso!');
+      showTooltip('Compra finalizada com sucesso!' , 'success');
       // Aqui você pode adicionar a lógica de finalização
     });
 
   } catch (err) {
     console.error(err);
-    alert('Erro ao atualizar o carrinho');
+    showTooltip('Erro ao atualizar o carrinho' , 'error');
   }
 }
 
@@ -107,7 +107,7 @@ async function updateCartItem(unitId, delta, token) {
     await updateCartUI();
   } catch (error) {
     console.error(error);
-    alert(error.message);
+    showTooltip(error.message , 'error');
   }
 }
 
@@ -123,7 +123,7 @@ async function deleteCartItem(unitId, token) {
     await updateCartUI();
   } catch (error) {
     console.error(error);
-    alert(error.message);
+    showTooltip(error.message , 'error');
   }
 }
 
@@ -133,3 +133,36 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
   }
 });
+
+
+
+//tolltip
+function showTooltip(message, type = 'success', duration = 3000) {
+    const tooltip = document.getElementById('custom-tooltip');
+    const overlay = document.getElementById('tooltip-overlay');
+
+    tooltip.textContent = message;
+    tooltip.className = ''; 
+    tooltip.classList.add(type);
+
+   
+    overlay.classList.add('show');
+    tooltip.classList.add('show');
+
+    // Animação
+    tooltip.style.transform = 'translateX(-50%) translateY(-20px)';
+    requestAnimationFrame(() => {
+      tooltip.style.transform = 'translateX(-50%) translateY(0)';
+      tooltip.style.opacity = '1';
+    });
+
+   
+    setTimeout(() => {
+      tooltip.classList.remove('show');
+      overlay.classList.remove('show');
+      tooltip.style.transform = 'translateX(-50%) translateY(-20px)';
+      tooltip.style.opacity = '0';
+    }, duration);
+  }
+
+  

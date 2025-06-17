@@ -2,8 +2,7 @@
 
 ///////////////////////////sidebar do usuario/////////////////////
 
-
-      let usuarioLogado = null;
+let usuarioLogado = null;
 
 document.addEventListener('DOMContentLoaded', () => {
   const loginToggle = document.getElementById('loginToggle');
@@ -47,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Login
 document.getElementById('loginForm').addEventListener('submit', async function (e) {
   e.preventDefault();
 
@@ -63,7 +63,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     const data = await response.json();
 
     if (response.ok) {
-      alert(`Bem-vindo, ${data.nome}!`);
+      showTooltip(`Bem-vindo, ${data.nome}!`, 'success');
       usuarioLogado = data;
       localStorage.setItem('usuarioLogado', JSON.stringify(data));
 
@@ -71,13 +71,14 @@ document.getElementById('loginForm').addEventListener('submit', async function (
       document.getElementById('userToggle').style.display = 'inline-block';
       document.getElementById('loginSidebar').classList.remove('active');
     } else {
-      alert(data.error || 'Erro ao fazer login');
+      showTooltip(data.error || 'Erro ao fazer login', 'error');
     }
   } catch (error) {
-    alert('Erro na conexão');
+    showTooltip('Erro na conexão', 'error');
   }
 });
 
+// Atualizar dados do usuário
 document.getElementById('updateForm').addEventListener('submit', async function (e) {
   e.preventDefault();
 
@@ -85,12 +86,12 @@ document.getElementById('updateForm').addEventListener('submit', async function 
   const novaSenha = document.getElementById('novaSenha').value;
 
   if (!usuarioLogado) {
-    alert("Você precisa estar logado.");
+    showTooltip("Você precisa estar logado." , 'error');
     return;
   }
 
   try {
-    const response = await fetch(`http://localhost:4000/usuario/${usuarioLogado.email}`, {
+    const response = await fetch(`http://localhost:4000/usuario/${usuarioLogado.email}`, { // aqui id no lugar de email
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -102,18 +103,19 @@ document.getElementById('updateForm').addEventListener('submit', async function 
     const data = await response.json();
 
     if (response.ok) {
-      alert("Dados atualizados com sucesso!");
+      showTooltip("Dados atualizados com sucesso!" , 'success');
       usuarioLogado.nome = data.nome;
       localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado));
     } else {
-      alert(data.error || "Erro ao atualizar.");
+      showTooltip(data.error || "Erro ao atualizar.", 'error');
     }
   } catch (error) {
-    alert("Erro na atualização.");
+    showTooltip("Erro na atualização.", 'error');
     console.error("Erro:", error);
   }
 });
 
+// Logout
 document.getElementById('logoutBtn').addEventListener('click', () => {
   localStorage.removeItem('usuarioLogado');
   usuarioLogado = null;
@@ -122,10 +124,42 @@ document.getElementById('logoutBtn').addEventListener('click', () => {
   document.getElementById('userToggle').style.display = 'none';
   document.getElementById('userSidebar').classList.remove('active');
 
-  alert("Você saiu da conta.");
+  showTooltip("Você saiu da conta." , 'success');
 });
 
+// Excluir conta
+document.getElementById('deleteAccountBtn').addEventListener('click', async () => {
+  if (!usuarioLogado || !usuarioLogado.id) {
+    showTooltip("Você precisa estar logado." , 'error');
+    return;
+  }
 
+
+  try {
+    const response = await fetch(`http://localhost:4000/usuario/${usuarioLogado.id}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${usuarioLogado.token}`
+      }
+    });
+
+    if (response.ok) {
+      showTooltip("Conta excluída com sucesso!" , 'success');
+      localStorage.removeItem('usuarioLogado');
+      usuarioLogado = null;
+
+      document.getElementById('loginToggle').style.display = 'inline-block';
+      document.getElementById('userToggle').style.display = 'none';
+      document.getElementById('userSidebar').classList.remove('active');
+    } else {
+      const data = await response.json();
+      showTooltip(data.error || "Erro ao excluir conta." , 'error');
+    }
+  } catch (error) {
+    console.error("Erro ao excluir conta:", error);
+    showTooltip("Erro na conexão ao tentar excluir." , 'error');
+  }
+});
 
 
 
@@ -156,15 +190,47 @@ document.getElementById('register').addEventListener('submit', async function(ev
       });
 
       if (response.ok) {
-        alert('Cadastro realizado com sucesso!');
+        showTooltip('Cadastro realizado com sucesso!' , 'success');
         document.getElementById('register').reset(); // Limpa o formulário
       } else {
         const errorData = await response.json();
-        alert('Erro ao cadastrar: ' + (errorData.message || response.statusText));
+        showTooltip('Erro ao cadastrar: ' + (errorData.message || response.statusText), 'error');
       }
     } catch (error) {
-      alert('Erro ao conectar com o servidor: ' + error.message);
+      showTooltip('Erro ao conectar com o servidor: ' + error.message , 'error');
     }
 
 
 });
+
+
+//tolltip
+function showTooltip(message, type = 'success', duration = 3000) {
+    const tooltip = document.getElementById('custom-tooltip');
+    const overlay = document.getElementById('tooltip-overlay');
+
+    tooltip.textContent = message;
+    tooltip.className = ''; 
+    tooltip.classList.add(type);
+
+   
+    overlay.classList.add('show');
+    tooltip.classList.add('show');
+
+    // Animação
+    tooltip.style.transform = 'translateX(-50%) translateY(-20px)';
+    requestAnimationFrame(() => {
+      tooltip.style.transform = 'translateX(-50%) translateY(0)';
+      tooltip.style.opacity = '1';
+    });
+
+   
+    setTimeout(() => {
+      tooltip.classList.remove('show');
+      overlay.classList.remove('show');
+      tooltip.style.transform = 'translateX(-50%) translateY(-20px)';
+      tooltip.style.opacity = '0';
+    }, duration);
+  }
+
+  

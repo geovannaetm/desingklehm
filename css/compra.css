@@ -483,23 +483,29 @@ a:hover {
   font-weight: bold;
   margin-top: auto;
   padding: 10px;
+ 
+  
 }
 
 .subtotal p,
 .subtotal h3 {
   font-family: var(--ff-Josefin_Sans);
   font-size: var(--fs-14);
+ 
 }
 
 .subtotal p {
   color: var(--amarelo);
   font-size: 2.6rem;
+ 
 }
 
 .subtotal h3 {
   color: var(--rosa);
   text-shadow: 2px 2px 3px rgba(88, 88, 88, 0.5);
   font-size: 2rem;
+  
+  
 }
 
 
@@ -513,7 +519,8 @@ a:hover {
   font-size: 1.9rem;
   width: 400px;
   cursor: pointer;
-  margin-top: 40px;
+  position: fixed;
+  bottom: 25px;
   border-radius: 5px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -832,7 +839,7 @@ textarea:focus {
 
 
 #logoutBtn {
-  margin-top: 350px;
+  margin-top: 310px;
   width: 100%;
   padding: 10px;
   background-color: var(--amarelo);
@@ -852,6 +859,78 @@ textarea:focus {
   #logoutBtn:active {
     transform: scale(0.95);
   }
+
+
+  #deleteAccountBtn{
+    background-color:#e74c3c; 
+    color:white; 
+    border:none; 
+    padding:10px 20px; 
+    cursor:pointer; 
+    border-radius:4px; 
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+  }
+
+
+  //TOOLTIP
+   #tooltip-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 9998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  #tooltip-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Tooltip estilizado */
+  #custom-tooltip {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    max-width: 300px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    background-color: #4CAF50; /* verde sucesso */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    text-align: center;
+    z-index: 9999;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  #custom-tooltip.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  #custom-tooltip.success {
+    background-color: #4CAF50;
+  }
+
+  #custom-tooltip.error {
+    background-color: #F44336;
+  }
+
 
 
 
